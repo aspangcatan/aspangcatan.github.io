@@ -16,7 +16,6 @@
         <h1 class="text-2xl font-bold text-white">My Portfolio</h1>
         <nav class="space-x-4 text-sm hidden md:flex">
             <a href="#about" class="hover:text-[#38bdf8]">About</a>
-            <a href="#skills" class="hover:text-[#38bdf8]">Skills</a>
             <a href="#projects" class="hover:text-[#38bdf8]">Projects</a>
             <a href="#contact" class="hover:text-[#38bdf8]">Contact</a>
         </nav>
@@ -38,7 +37,6 @@
     <div x-show="open"
          class="md:hidden absolute top-full left-0 w-full h-screen bg-[#0f172a]/95 backdrop-blur-sm flex flex-col items-center justify-center space-y-6 text-xl z-40">
         <a href="#about" @click="open = false" class="text-white hover:text-[#38bdf8]">About</a>
-        <a href="#skills" @click="open = false" class="text-white hover:text-[#38bdf8]">Skills</a>
         <a href="#projects" @click="open = false" class="text-white hover:text-[#38bdf8]">Projects</a>
         <a href="#contact" @click="open = false" class="text-white hover:text-[#38bdf8]">Contact</a>
     </div>
@@ -56,7 +54,7 @@
         <h2 class="text-2xl md:text-3xl text-[#38bdf8] font-medium">Hello, I'm</h2>
         <h1 class="text-5xl md:text-7xl font-extrabold mt-2 text-white drop-shadow">Asnaui Pangcatan</h1>
         <p class="mt-6 text-lg md:text-xl text-gray-200 max-w-2xl mx-auto leading-relaxed drop-shadow">
-            Full Stack Developer | Android (Java), Laravel, JavaScript
+            Full Stack Developer
         </p>
         <a href="#contact"
            class="mt-8 inline-block px-8 py-4 bg-[#38bdf8] text-black font-semibold text-lg rounded-lg hover:bg-white transition shadow-lg">
@@ -64,36 +62,86 @@
         </a>
     </div>
 </section>
-
 <!-- About -->
-<section id="about" class="py-20 px-4 bg-[#1e293b]">
-    <div class="max-w-5xl mx-auto">
-        <h2 class="text-3xl font-bold text-center mb-6">About Me</h2>
-        <p class="text-gray-300 text-center">
-            I’m a passionate Full Stack Developer specializing in Android (Java), Laravel, and JavaScript. I create
-            responsive, scalable web and mobile applications with clean and maintainable code.
-        </p>
-    </div>
-</section>
-
-<!-- Skills -->
-<section id="skills" class="py-20 px-4">
+<section id="about" class="py-20 px-4 bg-white">
     <div class="max-w-5xl mx-auto text-center">
-        <h2 class="text-3xl font-bold mb-6">Tech Stack</h2>
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-sm">
-            <div class="bg-[#1e293b] p-4 rounded-lg">Android (Java)</div>
-            <div class="bg-[#1e293b] p-4 rounded-lg">Laravel</div>
-            <div class="bg-[#1e293b] p-4 rounded-lg">JavaScript</div>
-            <div class="bg-[#1e293b] p-4 rounded-lg">HTML/CSS</div>
+        <!-- Heading -->
+        <h2 class="text-3xl font-extrabold text-center text-cyan-600 mb-12 text-2xl md:text-4xl">About</h2>
+
+        <div class="flex flex-col md:flex-row items-center justify-center gap-10 mb-5">
+            <!-- Profile Picture -->
+            <div class="flex justify-center mb-6 md:mb-0">
+                <img src="img/profile-pic.png" alt="Profile" class="w-32 h-32 rounded-full object-cover shadow-lg">
+            </div>
+
+            <!-- Bio -->
+            <div class="text-black max-w-3xl mx-auto text-lg">
+                <p class="mb-6 text-base md:text-lg leading-relaxed">
+                    I'm a web developer with a passion for building practical and efficient solutions.
+                    With several years of experience and a BSIT degree, I've worked with various technologies like
+                    HTML5, CSS3, PHP
+                    with the Laravel Framework, and JavaScript. I'm always eager to learn and improve my skills to
+                    create better experiences
+                    for users.
+                </p>
+            </div>
+        </div>
+
+        <!-- Tech Stack Badges -->
+        <div class="flex flex-wrap justify-center gap-3 mt-8">
+            <span class="bg-[#facc15] text-black font-semibold px-4 py-1 rounded-full text-sm">Android Programming (Java)</span>
+            <span class="bg-[#fb7185] text-white font-semibold px-4 py-1 rounded-full text-sm">Laravel</span>
+            <span class="bg-[#38bdf8] text-white font-semibold px-4 py-1 rounded-full text-sm">JavaScript</span>
+            <span class="bg-[#0ea5e9] text-white font-semibold px-4 py-1 rounded-full text-sm">Tailwind CSS</span>
+            <span class="bg-[#0ea5e9] text-white font-semibold px-4 py-1 rounded-full text-sm">Bootstrap CSS</span>
+            <span class="bg-[#2563eb] text-white font-semibold px-4 py-1 rounded-full text-sm">MySQL</span>
+            <span class="bg-[#14b8a6] text-white font-semibold px-4 py-1 rounded-full text-sm">REST API</span>
         </div>
     </div>
 </section>
-
 <!-- Projects -->
 <section id="projects" class="bg-gray-50 text-black py-16 px-4 sm:px-8 lg:px-16">
-    <h2 class="text-3xl font-bold text-center text-cyan-600 mb-12">Work Experience</h2>
+    <h2 class="text-3xl font-extrabold text-center text-cyan-600 mb-12 text-2xl md:text-4xl">Work Experience</h2>
 
     <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10">
+        <div class="flex flex-col gap-4 bg-white shadow-md rounded-lg p-6">
+            <div class="flex items-center space-x-2">
+                <div class="bg-black text-white rounded-full p-2">
+                    <span class="text-sm">💻</span>
+                </div>
+                <div>
+                    <h3 class="font-semibold text-lg">Fullstack Developer</h3>
+                    <h4 class="font-semibold text-lg">Freelancing</h4>
+                    <p class="text-sm text-gray-600">2025 – Present</p>
+                </div>
+            </div>
+            <p class="text-sm text-gray-700 leading-relaxed">
+                As a full-stack freelancer, I specialize in both front-end and back-end development, delivering complete
+                web solutions from concept to deployment. I collaborate with clients to understand their needs, design
+                user-friendly interfaces, and build robust, scalable systems. My work involves coding, testing, and
+                optimizing both client-side and server-side components to ensure seamless user experiences and
+                high-performance applications.
+            </p>
+            <div class="flex flex-wrap gap-2">
+                <a href="https://repoprojects.adjanauitech.com/yume/public/" target="_blank" class="inline-flex items-center bg-gray-200 text-sm px-3 py-1 rounded-full font-medium">
+                    Yume
+                </a>
+                <span class="text-sm text-gray-600">Landing Page, FAQ, Contact</span>
+            </div>
+            <div class="flex flex-wrap gap-2">
+                <a href="https://repoprojects.adjanauitech.com/zues/public/" target="_blank" class="inline-flex items-center bg-gray-200 text-sm px-3 py-1 rounded-full font-medium">
+                    ZEUS 808 Productions
+                </a>
+                <span class="text-sm text-gray-600">Portfolio, Blog, Contact</span>
+            </div>
+            <div class="flex flex-wrap gap-2">
+                <a href="https://repoprojects.adjanauitech.com/senoritos-garden/public/" target="_blank" class="inline-flex items-center bg-gray-200 text-sm px-3 py-1 rounded-full font-medium">
+                    Señorito’s Garden
+                </a>
+                <span class="text-sm text-gray-600">Landing Page, Contact</span>
+            </div>
+        </div>
+
         <!-- Work Experience Item -->
         <div class="flex flex-col gap-4 bg-white shadow-md rounded-lg p-6">
             <div class="flex items-center space-x-2">
@@ -107,10 +155,9 @@
                 </div>
             </div>
             <p class="text-sm text-gray-700 leading-relaxed">
-                As a programmer in a hospital, my primary responsibility is to develop, maintain, and support the
-                hospital's software applications and systems that are used to manage patient records, appointments, and
-                other administrative tasks. I work closely with hospital staff to understand their needs and develop
-                solutions that improve the efficiency and effectiveness of the hospital's operations.
+                As a programmer, my primary responsibility is to develop, maintain, and support software applications
+                and systems that help streamline business operations, improve user experience, and ensure the efficient
+                management of various tasks and data processes.
             </p>
             <div class="flex flex-wrap gap-2">
                 <span class="inline-flex items-center bg-gray-200 text-sm px-3 py-1 rounded-full font-medium">Human Resource Information System (HRIS)</span>
@@ -136,20 +183,19 @@
                 </div>
             </div>
             <p class="text-sm text-gray-700 leading-relaxed">
-                As a programmer in a hospital, my primary responsibility is to develop, maintain, and support the
-                hospital's software applications and systems that are used to manage patient records, appointments, and
-                other administrative tasks.
+                As a programmer, my primary responsibility is to develop, maintain, and support software applications
+                and systems that help streamline business operations, improve user experience, and ensure the efficient
+                management of various tasks and data processes.
             </p>
             <div class="flex flex-wrap gap-2">
                 <span class="inline-flex items-center bg-gray-200 text-sm px-3 py-1 rounded-full font-medium">Nurse Scheduler</span>
                 <span class="inline-flex items-center bg-gray-200 text-sm px-3 py-1 rounded-full font-medium">OR Planner</span>
-                <span class="inline-flex items-center bg-gray-200 text-sm px-3 py-1 rounded-full font-medium">Covid Swab Appointment System</span>
+                <span class="inline-flex items-center bg-gray-200 text-sm px-3 py-1 rounded-full font-medium">Covid-19 Information System</span>
                 <span class="inline-flex items-center bg-gray-200 text-sm px-3 py-1 rounded-full font-medium">Queuing System</span>
                 <span class="inline-flex items-center bg-gray-200 text-sm px-3 py-1 rounded-full font-medium">E-AMSP</span>
                 <span class="inline-flex items-center bg-gray-200 text-sm px-3 py-1 rounded-full font-medium">Patient Assessment Tool</span>
             </div>
         </div>
-
         <!-- Work Experience Item -->
         <div class="flex flex-col gap-4 bg-white shadow-md rounded-lg p-6">
             <div class="flex items-center space-x-2">
@@ -163,54 +209,61 @@
                 </div>
             </div>
             <p class="text-sm text-gray-700 leading-relaxed">
-                As a programmer in a hospital, my primary responsibility is to develop, maintain, and support the
-                hospital's software applications and systems that are used to manage patient records and other tasks.
+                As a programmer, my primary responsibility is to develop, maintain, and support software applications
+                and systems that help streamline business operations, improve user experience, and ensure the efficient
+                management of various tasks and data processes.
             </p>
             <div class="flex flex-wrap gap-2">
                 <span class="inline-flex items-center bg-gray-200 text-sm px-3 py-1 rounded-full font-medium">Mobile DTR</span>
             </div>
         </div>
+    </div>
+</section>
+<section id="contact" class="py-20 px-4 bg-[#1e293b]">
+    <div class="max-w-5xl mx-auto text-center">
+        <h2 class="text-3xl font-bold text-white mb-6">Get in Touch</h2>
+        <p class="text-gray-300 mb-6">
+            If you have any questions, comments, or would like to discuss a project or opportunity, please don't
+            hesitate to get in touch. I'm always excited to connect with new people and explore ways that we can work
+            together.
+        </p>
+    </div>
 
-        <div class="flex flex-col gap-4 bg-white shadow-md rounded-lg p-6">
-            <div class="flex items-center space-x-2">
-                <div class="bg-black text-white rounded-full p-2">
-                    <span class="text-sm">💻</span>
-                </div>
-                <div>
-                    <h3 class="font-semibold text-lg">Fullstack Developer</h3>
-                    <h4 class="font-semibold text-lg">Freelancing</h4>
-                    <p class="text-sm text-gray-600">2025 – Present</p>
-                </div>
-            </div>
-            <p class="text-sm text-gray-700 leading-relaxed">
-                As a programmer in a hospital, my primary responsibility is to develop, maintain, and support the
-                hospital's software applications and systems that are used to manage patient records and other tasks.
-            </p>
-            <div class="flex flex-wrap gap-2">
-                <span class="inline-flex items-center bg-gray-200 text-sm px-3 py-1 rounded-full font-medium">Yume</span>
-                <span class="inline-flex items-center bg-gray-200 text-sm px-3 py-1 rounded-full font-medium">ZEUS 808 Productions</span>
-                <span class="inline-flex items-center bg-gray-200 text-sm px-3 py-1 rounded-full font-medium">Señorito’s Garden</span>
-            </div>
+    <!-- Contact Details -->
+    <div class="max-w-5xl mx-auto grid grid-cols-1 sm:grid-cols-3 gap-12 mt-16 text-center">
+        <!-- Where to Find Me -->
+        <div class="bg-[#2d3748] text-white p-6 rounded-lg shadow-md">
+            <h3 class="text-xl font-semibold mb-4 flex justify-center items-center space-x-2">
+                <i class="fas fa-map-marker-alt text-[#F8E231]"></i>
+                <span>Where to Find Me</span>
+            </h3>
+            <p class="text-gray-300">Arpili, Balamban City, Cebu, Philippines</p>
+        </div>
+
+        <!-- Email Me at -->
+        <div class="bg-[#2d3748] text-white p-6 rounded-lg shadow-md">
+            <h3 class="text-xl font-semibold mb-4 flex justify-center items-center space-x-2">
+                <i class="fas fa-envelope text-[#F8E231]"></i>
+                <span>Email Me at</span>
+            </h3>
+            <p class="text-gray-300">naui.pangcatan@gmail.com</p>
+        </div>
+
+        <!-- Call Me at -->
+        <div class="bg-[#2d3748] text-white p-6 rounded-lg shadow-md">
+            <h3 class="text-xl font-semibold mb-4 flex justify-center items-center space-x-2">
+                <i class="fas fa-phone-alt text-[#F8E231]"></i>
+                <span>Call Me at</span>
+            </h3>
+            <p class="text-gray-300">09995249718</p>
         </div>
     </div>
 </section>
 
 
-<!-- Contact -->
-<section id="contact" class="py-20 px-4 bg-[#1e293b]">
-    <div class="max-w-5xl mx-auto text-center">
-        <h2 class="text-3xl font-bold mb-6">Get in Touch</h2>
-        <p class="text-gray-300 mb-6">Have a question or want to work together? Feel free to reach out!</p>
-        <a href="mailto:your.email@example.com"
-           class="inline-block bg-[#38bdf8] text-black px-6 py-3 rounded-lg hover:bg-white transition font-semibold">
-            Send an Email
-        </a>
-    </div>
-</section>
-
 <!-- Footer -->
-<footer class="bg-[#0f172a] py-6 text-center text-gray-400 text-sm">
-    &copy; 2025 Asnaui Pangcatan. All rights reserved.
+<footer class="py-6 bg-black text-white text-center">
+    <p>&copy; 2025 Asnaui Pangcatan | All Rights Reserved.</p>
 </footer>
 </body>
 </html>
