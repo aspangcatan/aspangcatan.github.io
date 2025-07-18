@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta name="description" content="Asnaui Pangcatan – Full Stack Developer based in Cebu, Philippines">
+    <meta property="og:title" content="Asnaui Pangcatan Portfolio">
+    <meta property="og:image" content="img/profile-pic.png">
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Developer Portfolio</title>
@@ -14,11 +17,25 @@
 <header class="fixed w-full z-50 bg-[#0f172a] shadow-md">
     <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
         <h1 class="text-2xl font-bold text-white">My Portfolio</h1>
-        <nav class="space-x-4 text-sm hidden md:flex">
-            <a href="#about" class="hover:text-[#38bdf8]">About</a>
-            <a href="#projects" class="hover:text-[#38bdf8]">Projects</a>
-            <a href="#contact" class="hover:text-[#38bdf8]">Contact</a>
+        <nav class="hidden md:flex items-center space-x-6 text-sm font-medium">
+            <a href="#about" class="text-gray-700 hover:text-[#38bdf8] transition-colors duration-300 relative group">
+                About
+                <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-[#38bdf8] group-hover:w-full transition-all duration-300"></span>
+            </a>
+            <a href="#projects" class="text-gray-700 hover:text-[#38bdf8] transition-colors duration-300 relative group">
+                Projects
+                <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-[#38bdf8] group-hover:w-full transition-all duration-300"></span>
+            </a>
+            <a href="#portfolio" class="text-gray-700 hover:text-[#38bdf8] transition-colors duration-300 relative group">
+                Portfolio
+                <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-[#38bdf8] group-hover:w-full transition-all duration-300"></span>
+            </a>
+            <a href="#contact" class="text-gray-700 hover:text-[#38bdf8] transition-colors duration-300 relative group">
+                Contact
+                <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-[#38bdf8] group-hover:w-full transition-all duration-300"></span>
+            </a>
         </nav>
+
         <button @click="open = !open" class="md:hidden focus:outline-none relative w-6 h-6" aria-label="Toggle menu">
             <div class="absolute top-0 left-0 w-full h-full flex items-center justify-center">
                 <svg x-show="!open" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="none"
@@ -38,6 +55,7 @@
          class="md:hidden absolute top-full left-0 w-full h-screen bg-[#0f172a]/95 backdrop-blur-sm flex flex-col items-center justify-center space-y-6 text-xl z-40">
         <a href="#about" @click="open = false" class="text-white hover:text-[#38bdf8]">About</a>
         <a href="#projects" @click="open = false" class="text-white hover:text-[#38bdf8]">Projects</a>
+        <a href="#portfolio" @click="open = false" class="text-white hover:text-[#38bdf8]">Portfolio</a>
         <a href="#contact" @click="open = false" class="text-white hover:text-[#38bdf8]">Contact</a>
     </div>
 </header>
@@ -110,8 +128,8 @@
                     <span class="text-sm">💻</span>
                 </div>
                 <div>
-                    <h3 class="font-semibold text-lg">Fullstack Developer</h3>
-                    <h4 class="font-semibold text-lg">Freelancing</h4>
+                    <h3 class="font-semibold text-lg">Freelance Web Developer</h3>
+                    <h4 class="font-semibold text-lg">Arki Solution</h4>
                     <p class="text-sm text-gray-600">2025 – Present</p>
                 </div>
             </div>
@@ -123,7 +141,7 @@
                 high-performance applications.
             </p>
             <div class="flex flex-wrap gap-2">
-                <a href="https://repoprojects.adjanauitech.com/yume/public/" target="_blank" class="inline-flex items-center bg-gray-200 text-sm px-3 py-1 rounded-full font-medium">
+                <a href="https://repoprojects.adjanauitech.com/demo/yume-html/" target="_blank" class="inline-flex items-center bg-gray-200 text-sm px-3 py-1 rounded-full font-medium">
                     Yume
                 </a>
                 <span class="text-sm text-gray-600">Landing Page, FAQ, Contact</span>
@@ -135,7 +153,7 @@
                 <span class="text-sm text-gray-600">Portfolio, Blog, Contact</span>
             </div>
             <div class="flex flex-wrap gap-2">
-                <a href="https://repoprojects.adjanauitech.com/senoritos-garden/public/" target="_blank" class="inline-flex items-center bg-gray-200 text-sm px-3 py-1 rounded-full font-medium">
+                <a href="https://repoprojects.adjanauitech.com/senoritos-garden/public" target="_blank" class="inline-flex items-center bg-gray-200 text-sm px-3 py-1 rounded-full font-medium">
                     Señorito’s Garden
                 </a>
                 <span class="text-sm text-gray-600">Landing Page, Contact</span>
@@ -219,6 +237,34 @@
         </div>
     </div>
 </section>
+
+<section id="portfolio" class="bg-white text-black py-20 px-4">
+    <div class="max-w-6xl mx-auto text-center">
+        <h2 class="text-3xl font-extrabold text-cyan-600 mb-12">Portfolio</h2>
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="bg-gray-100 rounded-lg shadow p-4">
+                <img src="img/system-yume.png" alt="Yume Screenshot" class="rounded mb-4">
+                <h3 class="font-semibold text-lg">YUME</h3>
+                <p class="text-sm text-gray-700 mt-2">YUME is a next-generation music discovery and streaming platform that allows users to stream music and earn rewards while providing artists with a free publishing platform. With users and artists from the Philippines, South Korea, and Singapore, it offers a unique revenue-sharing model and affiliate system.</p>
+                <a href="https://repoprojects.adjanauitech.com/demo/yume-html/" target="_blank" class="text-[#38bdf8] mt-2 inline-block">View Project</a>
+            </div>
+            <div class="bg-gray-100 rounded-lg shadow p-4">
+                <img src="img/system-zues.png" alt="Zeus Productions Screenshot" class="rounded mb-4">
+                <h3 class="font-semibold text-lg">ZEUS 808 Productions</h3>
+                <p class="text-sm text-gray-600">The Zeus Events Management platform allows clients to view upcoming events, register for events, and manage bookings through an intuitive interface. It streamlines the event planning and attendee engagement process for corporate and entertainment events.</p>
+                <a href="https://repoprojects.adjanauitech.com/zues/public/" target="_blank" class="text-[#38bdf8] mt-2 inline-block">View Project</a>
+            </div>
+            <div class="bg-gray-100 rounded-lg shadow p-4">
+                <img src="img/system-senoritos.png" alt="Señorito's Garden Screenshot" class="rounded mb-4">
+                <h3 class="font-semibold text-lg">Señorito's Garden</h3>
+                <p class="text-sm text-gray-600">Senorito's Garden is a vibrant and interactive website designed to promote a family-friendly attraction. Features include a comprehensive event calendar, attraction details, ticket booking functionality, and interactive maps. The site focuses on being fun, engaging, and easy to navigate for visitors of all ages.</p>
+                <a href="https://repoprojects.adjanauitech.com/senoritos-garden/public" target="_blank" class="text-[#38bdf8] mt-2 inline-block">View Project</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+
 <section id="contact" class="py-20 px-4 bg-[#1e293b]">
     <div class="max-w-5xl mx-auto text-center">
         <h2 class="text-3xl font-bold text-white mb-6">Get in Touch</h2>
