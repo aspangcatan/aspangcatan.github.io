@@ -1,248 +1,198 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="description" content="Asnaui Pangcatan – Full Stack Developer based in Cebu, Philippines">
     <meta property="og:title" content="Asnaui Pangcatan Portfolio">
     <meta property="og:image" content="img/profile-pic.png">
-    <meta charset="UTF-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>Developer Portfolio</title>
+    <title>Asnaui Pangcatan | Developer Portfolio</title>
+
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
     <script src="https://unpkg.com/alpinejs" defer></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
 </head>
-<body x-data="{ open: false }" :class="{ 'overflow-hidden': open }"
-      class="bg-[#0f172a] text-white font-sans scroll-smooth">
+<body x-data="{ open: false }" :class="{ 'overflow-hidden': open }" class="bg-[#0f172a] text-white font-sans scroll-smooth">
+
 <!-- Navbar -->
-<header class="fixed w-full z-50 bg-[#0f172a] shadow-md">
-    <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
-        <h1 class="text-2xl font-bold text-white">My Portfolio</h1>
-        <nav class="hidden md:flex items-center space-x-6 text-sm font-medium">
-            <a href="#about" class="text-white hover:text-[#38bdf8] transition-colors duration-300 relative group">
-                About
-                <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-[#38bdf8] group-hover:w-full transition-all duration-300"></span>
+<header class="fixed w-full z-50 bg-[#0f172a]/90 backdrop-blur-md shadow-md">
+    <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+        <h1 class="text-2xl font-bold text-white">Asnaui Pangcatan</h1>
+        <nav class="hidden md:flex items-center space-x-8 font-medium text-sm">
+            <a href="#about" class="hover:text-cyan-400 transition relative group">About
+                <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-cyan-400 group-hover:w-full transition-all duration-300"></span>
             </a>
-            <a href="#projects" class="text-white hover:text-[#38bdf8] transition-colors duration-300 relative group">
-                Projects
-                <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-[#38bdf8] group-hover:w-full transition-all duration-300"></span>
+            <a href="#projects" class="hover:text-cyan-400 transition relative group">Projects
+                <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-cyan-400 group-hover:w-full transition-all duration-300"></span>
             </a>
-            <a href="#portfolio" class="text-white hover:text-[#38bdf8] transition-colors duration-300 relative group">
-                Portfolio
-                <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-[#38bdf8] group-hover:w-full transition-all duration-300"></span>
-            </a>
-            <a href="#contact" class="text-white hover:text-[#38bdf8] transition-colors duration-300 relative group">
-                Contact
-                <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-[#38bdf8] group-hover:w-full transition-all duration-300"></span>
+            <a href="#contact" class="hover:text-cyan-400 transition relative group">Contact
+                <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-cyan-400 group-hover:w-full transition-all duration-300"></span>
             </a>
         </nav>
-
-        <button @click="open = !open" class="md:hidden focus:outline-none relative w-6 h-6" aria-label="Toggle menu">
-            <div class="absolute top-0 left-0 w-full h-full flex items-center justify-center">
-                <svg x-show="!open" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="none"
-                     viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
-                </svg>
-                <svg x-show="open" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="none"
-                     viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
-                </svg>
-            </div>
+        <button @click="open = !open" class="md:hidden focus:outline-none w-6 h-6">
+            <svg x-show="!open" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none"
+                 viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+            </svg>
+            <svg x-show="open" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none"
+                 viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+            </svg>
         </button>
     </div>
 
     <!-- Mobile Nav -->
-    <div x-show="open"
-         class="md:hidden absolute top-full left-0 w-full h-screen bg-[#0f172a]/95 backdrop-blur-sm flex flex-col items-center justify-center space-y-6 text-xl z-40">
-        <a href="#about" @click="open = false" class="text-white hover:text-[#38bdf8]">About</a>
-        <a href="#projects" @click="open = false" class="text-white hover:text-[#38bdf8]">Projects</a>
-        <a href="#portfolio" @click="open = false" class="text-white hover:text-[#38bdf8]">Portfolio</a>
-        <a href="#contact" @click="open = false" class="text-white hover:text-[#38bdf8]">Contact</a>
+    <div x-show="open" class="md:hidden absolute top-full left-0 w-full h-screen bg-[#0f172a]/95 backdrop-blur-sm flex flex-col items-center justify-center space-y-8 text-xl z-40">
+        <a href="#about" @click="open = false" class="hover:text-cyan-400 transition">About</a>
+        <a href="#projects" @click="open = false" class="hover:text-cyan-400 transition">Projects</a>
+        <a href="#contact" @click="open = false" class="hover:text-cyan-400 transition">Contact</a>
     </div>
 </header>
 
 <!-- Hero -->
-<section id="hero"
-         class="h-screen flex flex-col justify-center items-center text-center px-4 pt-20 relative overflow-hidden bg-fixed bg-center bg-cover"
-         style="background-image: url('img/hero-img.png');">
-    <!-- Overlay -->
-    <div class="absolute inset-0 bg-black bg-opacity-60 z-0"></div>
-
-    <!-- Foreground Content -->
+<section id="hero" class="h-screen flex flex-col justify-center items-center text-center px-6 pt-20 bg-gradient-to-b from-[#0f172a] via-[#1e293b] to-[#0f172a] relative overflow-hidden">
     <div class="z-10">
-        <h2 class="text-2xl md:text-3xl text-[#38bdf8] font-medium">Hello, I'm</h2>
-        <h1 class="text-5xl md:text-7xl font-extrabold mt-2 text-white drop-shadow">Asnaui Pangcatan</h1>
-        <p class="mt-6 text-lg md:text-xl text-gray-200 max-w-2xl mx-auto leading-relaxed drop-shadow">
-            Full Stack Developer
+        <h2 class="text-2xl md:text-3xl text-cyan-400 font-light">Hello, I'm</h2>
+        <h1 class="text-5xl md:text-7xl font-extrabold mt-2 text-white drop-shadow-lg">Asnaui Pangcatan</h1>
+        <p class="mt-6 text-lg md:text-xl text-gray-300 max-w-2xl mx-auto leading-relaxed drop-shadow">
+            Full Stack Developer | Building efficient and modern web applications
         </p>
-        <a href="#contact"
-           class="mt-8 inline-block px-8 py-4 bg-[#38bdf8] text-black font-semibold text-lg rounded-lg hover:bg-white transition shadow-lg">
+        <a href="#contact" class="mt-8 inline-block px-8 py-4 bg-cyan-400 text-black font-semibold text-lg rounded-xl hover:bg-white hover:text-cyan-500 transition-shadow shadow-lg">
             Let's Connect
         </a>
     </div>
 </section>
+
 <!-- About -->
-<section id="about" class="py-20 px-4 bg-white">
+<section id="about" class="py-20 px-6 bg-[#f8fafc] text-[#1e293b]">
     <div class="max-w-5xl mx-auto text-center">
-        <!-- Heading -->
-        <h2 class="text-3xl font-extrabold text-center text-cyan-600 mb-12 text-2xl md:text-4xl">About</h2>
-
-        <div class="flex flex-col md:flex-row items-center justify-center gap-10 mb-5">
-            <!-- Profile Picture -->
-            <div class="flex justify-center mb-6 md:mb-0">
-                <img src="img/profile-pic.png" alt="Profile" class="w-32 h-32 rounded-full object-cover shadow-lg">
-            </div>
-
-            <!-- Bio -->
-            <div class="text-black max-w-3xl mx-auto text-lg">
-                <p class="mb-6 text-base md:text-lg leading-relaxed">
-                    I'm a web developer with a passion for building practical and efficient solutions.
-                    With several years of experience and a BSIT degree, I've worked with various technologies like
-                    HTML5, CSS3, PHP
-                    with the Laravel Framework, and JavaScript. I'm always eager to learn and improve my skills to
-                    create better experiences
-                    for users.
-                </p>
-            </div>
+        <h2 class="text-4xl font-extrabold mb-12 text-cyan-600">About Me</h2>
+        <div class="flex flex-col md:flex-row items-center justify-center gap-12 mb-10">
+            <img src="img/profile-pic.png" alt="Profile" class="w-36 h-36 rounded-full object-cover shadow-xl">
+            <p class="text-lg max-w-3xl leading-relaxed">
+                I'm a web developer passionate about creating efficient and modern solutions. With years of experience,
+                I’ve worked with technologies like HTML5, CSS3, PHP (Laravel), and JavaScript. I strive to learn
+                continuously and deliver seamless user experiences.
+            </p>
         </div>
-
-        <!-- Tech Stack Badges -->
         <div class="flex flex-wrap justify-center gap-3 mt-8">
-            <span class="bg-[#facc15] text-black font-semibold px-4 py-1 rounded-full text-sm">Android Programming (Java)</span>
-            <span class="bg-[#fb7185] text-white font-semibold px-4 py-1 rounded-full text-sm">Laravel</span>
-            <span class="bg-[#38bdf8] text-white font-semibold px-4 py-1 rounded-full text-sm">JavaScript</span>
-            <span class="bg-[#0ea5e9] text-white font-semibold px-4 py-1 rounded-full text-sm">Tailwind CSS</span>
-            <span class="bg-[#0ea5e9] text-white font-semibold px-4 py-1 rounded-full text-sm">Bootstrap CSS</span>
-            <span class="bg-[#2563eb] text-white font-semibold px-4 py-1 rounded-full text-sm">MySQL</span>
-            <span class="bg-[#14b8a6] text-white font-semibold px-4 py-1 rounded-full text-sm">REST API</span>
+            <span class="bg-yellow-400 text-black px-4 py-1 rounded-full font-medium text-sm">Java (Android)</span>
+            <span class="bg-pink-500 text-white px-4 py-1 rounded-full font-medium text-sm">Laravel</span>
+            <span class="bg-cyan-400 text-white px-4 py-1 rounded-full font-medium text-sm">JavaScript</span>
+            <span class="bg-sky-500 text-white px-4 py-1 rounded-full font-medium text-sm">Tailwind CSS</span>
+            <span class="bg-blue-600 text-white px-4 py-1 rounded-full font-medium text-sm">Bootstrap</span>
+            <span class="bg-indigo-600 text-white px-4 py-1 rounded-full font-medium text-sm">MySQL</span>
+            <span class="bg-teal-500 text-white px-4 py-1 rounded-full font-medium text-sm">REST API</span>
         </div>
     </div>
 </section>
-<!-- Projects -->
-<section id="projects" class="bg-gray-50 text-black py-16 px-4 sm:px-8 lg:px-16">
-    <h2 class="text-3xl font-extrabold text-center text-cyan-600 mb-12 text-2xl md:text-4xl">Work Experience</h2>
 
-    <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10">
-        <!-- Work Experience Item -->
-        <div class="flex flex-col gap-4 bg-white shadow-md rounded-lg p-6">
-            <div class="flex items-center space-x-2">
+<!-- Work Experience -->
+<section id="projects" class="py-20 px-6 bg-[#f1f5f9] text-[#1e293b]">
+    <h2 class="text-4xl font-extrabold text-center text-cyan-600 mb-16">Work Experience</h2>
+    <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
+        <!-- Experience Card -->
+        <div class="bg-white rounded-2xl shadow-lg p-6 hover:shadow-2xl transition-all duration-300">
+            <div class="flex items-center mb-4 space-x-3">
                 <div class="bg-black text-white rounded-full p-2">
-                    <span class="text-sm">💻</span>
+                    <span>💻</span>
                 </div>
                 <div>
                     <h3 class="font-semibold text-lg">Computer Maintenance Technologist II</h3>
-                    <h4 class="font-semibold text-lg">Cebu South Medical Center</h4>
-                    <p class="text-sm text-gray-600">2022 – Present</p>
+                    <h4 class="font-medium text-gray-600">Cebu South Medical Center</h4>
+                    <p class="text-sm text-gray-400">2022 – Present</p>
                 </div>
             </div>
-            <p class="text-sm text-gray-700 leading-relaxed">
-                As a programmer, my primary responsibility is to develop, maintain, and support software applications
-                and systems that help streamline business operations, improve user experience, and ensure the efficient
-                management of various tasks and data processes.
+            <p class="text-gray-700 mb-3">
+                Developing and maintaining software applications that streamline business operations and improve user experience.
             </p>
             <div class="flex flex-wrap gap-2">
-                <span class="inline-flex items-center bg-gray-200 text-sm px-3 py-1 rounded-full font-medium">Human Resource Information System (HRIS)</span>
-                <span class="inline-flex items-center bg-gray-200 text-sm px-3 py-1 rounded-full font-medium">Mobile DTR</span>
-                <span class="inline-flex items-center bg-gray-200 text-sm px-3 py-1 rounded-full font-medium">Mobile DTS</span>
-                <span class="inline-flex items-center bg-gray-200 text-sm px-3 py-1 rounded-full font-medium">Central Access Management System (CAMS)</span>
-                <span class="inline-flex items-center bg-gray-200 text-sm px-3 py-1 rounded-full font-medium">Certificate Tracker</span>
-                <span class="inline-flex items-center bg-gray-200 text-sm px-3 py-1 rounded-full font-medium">Queuing System</span>
-                <span class="inline-flex items-center bg-gray-200 text-sm px-3 py-1 rounded-full font-medium">E-AMSP</span>
-                <span class="inline-flex items-center bg-gray-200 text-sm px-3 py-1 rounded-full font-medium">E-LDNA</span>
+                <span class="bg-gray-200 text-sm px-3 py-1 rounded-full font-medium">HRIS</span>
+                <span class="bg-gray-200 text-sm px-3 py-1 rounded-full font-medium">Mobile DTR</span>
+                <span class="bg-gray-200 text-sm px-3 py-1 rounded-full font-medium">Mobile DTS</span>
+                <span class="bg-gray-200 text-sm px-3 py-1 rounded-full font-medium">CAMS</span>
+                <span class="bg-gray-200 text-sm px-3 py-1 rounded-full font-medium">Certificate Tracker</span>
+                <span class="bg-gray-200 text-sm px-3 py-1 rounded-full font-medium">Queuing System</span>
+                <span class="bg-gray-200 text-sm px-3 py-1 rounded-full font-medium">E-AMSP</span>
+                <span class="bg-gray-200 text-sm px-3 py-1 rounded-full font-medium">E-LDNA</span>
             </div>
         </div>
-        <!-- Work Experience Item -->
-        <div class="flex flex-col gap-4 bg-white shadow-md rounded-lg p-6">
-            <div class="flex items-center space-x-2">
-                <div class="bg-black text-white rounded-full p-2">
-                    <span class="text-sm">💻</span>
-                </div>
+
+        <!-- Repeat for other experience items -->
+        <div class="bg-white rounded-2xl shadow-lg p-6 hover:shadow-2xl transition-all duration-300">
+            <div class="flex items-center mb-4 space-x-3">
+                <div class="bg-black text-white rounded-full p-2">💻</div>
                 <div>
                     <h3 class="font-semibold text-lg">Computer Maintenance Technologist II (Job Order)</h3>
-                    <h4 class="font-semibold text-lg">Vicente Sotto Memorial Medical Center</h4>
-                    <p class="text-sm text-gray-600">2019 – 2022</p>
+                    <h4 class="font-medium text-gray-600">Vicente Sotto Memorial Medical Center</h4>
+                    <p class="text-sm text-gray-400">2019 – 2022</p>
                 </div>
             </div>
-            <p class="text-sm text-gray-700 leading-relaxed">
-                As a programmer, my primary responsibility is to develop, maintain, and support software applications
-                and systems that help streamline business operations, improve user experience, and ensure the efficient
-                management of various tasks and data processes.
+            <p class="text-gray-700 mb-3">
+                Maintaining and supporting software systems for hospital operations and improving workflow efficiency.
             </p>
             <div class="flex flex-wrap gap-2">
-                <span class="inline-flex items-center bg-gray-200 text-sm px-3 py-1 rounded-full font-medium">Nurse Scheduler</span>
-                <span class="inline-flex items-center bg-gray-200 text-sm px-3 py-1 rounded-full font-medium">OR Planner</span>
-                <span class="inline-flex items-center bg-gray-200 text-sm px-3 py-1 rounded-full font-medium">Covid-19 Information System</span>
-                <span class="inline-flex items-center bg-gray-200 text-sm px-3 py-1 rounded-full font-medium">Queuing System</span>
-                <span class="inline-flex items-center bg-gray-200 text-sm px-3 py-1 rounded-full font-medium">E-AMSP</span>
-                <span class="inline-flex items-center bg-gray-200 text-sm px-3 py-1 rounded-full font-medium">Patient Assessment Tool</span>
+                <span class="bg-gray-200 text-sm px-3 py-1 rounded-full font-medium">Nurse Scheduler</span>
+                <span class="bg-gray-200 text-sm px-3 py-1 rounded-full font-medium">OR Planner</span>
+                <span class="bg-gray-200 text-sm px-3 py-1 rounded-full font-medium">Covid-19 Info System</span>
+                <span class="bg-gray-200 text-sm px-3 py-1 rounded-full font-medium">Queuing System</span>
+                <span class="bg-gray-200 text-sm px-3 py-1 rounded-full font-medium">E-AMSP</span>
+                <span class="bg-gray-200 text-sm px-3 py-1 rounded-full font-medium">Patient Assessment Tool</span>
             </div>
         </div>
-        <!-- Work Experience Item -->
-        <div class="flex flex-col gap-4 bg-white shadow-md rounded-lg p-6">
-            <div class="flex items-center space-x-2">
-                <div class="bg-black text-white rounded-full p-2">
-                    <span class="text-sm">💻</span>
-                </div>
+
+        <div class="bg-white rounded-2xl shadow-lg p-6 hover:shadow-2xl transition-all duration-300">
+            <div class="flex items-center mb-4 space-x-3">
+                <div class="bg-black text-white rounded-full p-2">💻</div>
                 <div>
                     <h3 class="font-semibold text-lg">Computer Programmer I (Job Order)</h3>
-                    <h4 class="font-semibold text-lg">Department of Health Regional Office 7</h4>
-                    <p class="text-sm text-gray-600">2017 – 2019</p>
+                    <h4 class="font-medium text-gray-600">DOH Regional Office 7</h4>
+                    <p class="text-sm text-gray-400">2017 – 2019</p>
                 </div>
             </div>
-            <p class="text-sm text-gray-700 leading-relaxed">
-                As a programmer, my primary responsibility is to develop, maintain, and support software applications
-                and systems that help streamline business operations, improve user experience, and ensure the efficient
-                management of various tasks and data processes.
+            <p class="text-gray-700 mb-3">
+                Developing software to streamline processes and assist hospital staff in daily operations.
             </p>
             <div class="flex flex-wrap gap-2">
-                <span class="inline-flex items-center bg-gray-200 text-sm px-3 py-1 rounded-full font-medium">Mobile DTR</span>
+                <span class="bg-gray-200 text-sm px-3 py-1 rounded-full font-medium">Mobile DTR</span>
             </div>
         </div>
     </div>
 </section>
 
-
-
-<section id="contact" class="py-20 px-4 bg-[#1e293b]">
+<!-- Contact -->
+<section id="contact" class="py-20 px-6 bg-[#1e293b] text-white">
     <div class="max-w-5xl mx-auto text-center">
-        <h2 class="text-3xl font-bold text-white mb-6">Get in Touch</h2>
-        <p class="text-gray-300 mb-6">
-            If you have any questions, comments, or would like to discuss a project or opportunity, please don't
-            hesitate to get in touch. I'm always excited to connect with new people and explore ways that we can work
-            together.
+        <h2 class="text-4xl font-bold mb-6 text-cyan-400">Get in Touch</h2>
+        <p class="text-gray-300 mb-12">
+            I’m always excited to connect with new people. Whether you have a question, a project, or an opportunity,
+            feel free to reach out!
         </p>
-    </div>
 
-    <!-- Contact Details -->
-    <div class="max-w-5xl mx-auto grid grid-cols-1 sm:grid-cols-3 gap-12 mt-16 text-center">
-        <!-- Where to Find Me -->
-        <div class="bg-[#2d3748] text-white p-6 rounded-lg shadow-md">
-            <h3 class="text-xl font-semibold mb-4 flex justify-center items-center space-x-2">
-                <i class="fas fa-map-marker-alt text-[#F8E231]"></i>
-                <span>Where to Find Me</span>
-            </h3>
-            <p class="text-gray-300">Arpili, Balamban City, Cebu, Philippines</p>
-        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-10">
+            <div class="bg-[#2d3748] p-6 rounded-xl shadow-lg hover:shadow-2xl transition">
+                <h3 class="text-xl font-semibold mb-3 flex items-center justify-center gap-2">
+                    <i class="fas fa-map-marker-alt text-yellow-400"></i>Location
+                </h3>
+                <p class="text-gray-300">Arpili, Balamban City, Cebu, Philippines</p>
+            </div>
 
-        <!-- Email Me at -->
-        <div class="bg-[#2d3748] text-white p-6 rounded-lg shadow-md">
-            <h3 class="text-xl font-semibold mb-4 flex justify-center items-center space-x-2">
-                <i class="fas fa-envelope text-[#F8E231]"></i>
-                <span>Email Me at</span>
-            </h3>
-            <p class="text-gray-300">naui.pangcatan@gmail.com</p>
-        </div>
+            <div class="bg-[#2d3748] p-6 rounded-xl shadow-lg hover:shadow-2xl transition">
+                <h3 class="text-xl font-semibold mb-3 flex items-center justify-center gap-2">
+                    <i class="fas fa-envelope text-yellow-400"></i>Email
+                </h3>
+                <p class="text-gray-300">naui.pangcatan@gmail.com</p>
+            </div>
 
-        <!-- Call Me at -->
-        <div class="bg-[#2d3748] text-white p-6 rounded-lg shadow-md">
-            <h3 class="text-xl font-semibold mb-4 flex justify-center items-center space-x-2">
-                <i class="fas fa-phone-alt text-[#F8E231]"></i>
-                <span>Call Me at</span>
-            </h3>
-            <p class="text-gray-300">09995249718</p>
+            <div class="bg-[#2d3748] p-6 rounded-xl shadow-lg hover:shadow-2xl transition">
+                <h3 class="text-xl font-semibold mb-3 flex items-center justify-center gap-2">
+                    <i class="fas fa-phone-alt text-yellow-400"></i>Phone
+                </h3>
+                <p class="text-gray-300">09995249718</p>
+            </div>
         </div>
     </div>
 </section>
-
 
 <!-- Footer -->
 <footer class="py-6 bg-black text-white text-center">
