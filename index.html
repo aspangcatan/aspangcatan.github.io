@@ -6,7 +6,7 @@
     <meta name="description" content="Asnaui Pangcatan - Senior Full Stack Developer building high-impact healthcare and public-sector digital systems.">
     <meta property="og:title" content="Asnaui Pangcatan | Senior Full Stack Developer">
     <meta property="og:description" content="Portfolio of a full stack engineer delivering mission-critical systems for hospitals and public service teams.">
-    <meta property="og:image" content="img/profile-pic.png">
+    <meta property="og:image" content="assets/assets/img/profile-pic.png">
     <title>Asnaui Pangcatan | Senior Full Stack Developer</title>
 
     <script src="https://cdn.tailwindcss.com"></script>
@@ -142,7 +142,11 @@
                 <div class="relative mx-auto max-w-md animate-floatY">
                     <div class="absolute -inset-6 -z-10 rounded-[2rem] bg-gradient-to-tr from-cyan/20 via-emerald/15 to-cyan/10 blur-2xl"></div>
                     <div class="overflow-hidden rounded-[1.75rem] border border-white/10 bg-panel/80 p-3 shadow-card backdrop-blur-sm">
-                        <img src="img/hero-img.png" alt="Developer workspace setup" class="h-full w-full rounded-2xl object-cover">
+                        <picture>
+                            <source media="(max-width: 768px)" srcset="assets/img/hero-img-768.jpg">
+                            <source media="(min-width: 769px)" srcset="assets/img/hero-img-1280.jpg">
+                            <img src="assets/img/hero-img-1280.jpg" alt="Developer workspace setup" loading="eager" decoding="async" class="h-full w-full rounded-2xl object-cover">
+                        </picture>
                     </div>
                 </div>
             </div>
@@ -182,7 +186,7 @@
         <div class="grid items-start gap-10 lg:grid-cols-12">
             <div class="reveal lg:col-span-4">
                 <div class="mx-auto max-w-xs overflow-hidden rounded-3xl border border-white/10 bg-panel/80 p-3 shadow-card">
-                    <img src="img/profile-pic.png" alt="Asnaui Pangcatan portrait" class="h-full w-full rounded-2xl object-cover">
+                    <img src="assets/img/profile-pic.png" alt="Asnaui Pangcatan portrait" class="h-full w-full rounded-2xl object-cover">
                 </div>
             </div>
             <div class="reveal lg:col-span-8">
@@ -339,18 +343,6 @@
         </div>
     </section>
 
-    <!-- GitHub -->
-    <section class="mx-auto max-w-7xl px-4 pb-14 sm:px-6 sm:pb-16 lg:px-8 lg:pb-20">
-        <div class="reveal rounded-3xl border border-cyan/25 bg-cyan/10 p-8 text-center shadow-card">
-            <h2 class="font-display text-3xl font-bold sm:text-4xl">GitHub / Open Source</h2>
-            <p class="mx-auto mt-3 max-w-2xl text-sm leading-relaxed text-textSoft">
-                Recruiters can review repository quality, commit consistency, and practical system implementations in my GitHub profile.
-            </p>
-            <a href="https://github.com/" target="_blank" rel="noopener noreferrer" class="mt-6 inline-flex rounded-xl bg-cyan px-6 py-3 text-sm font-bold text-slate-900 transition duration-300 hover:-translate-y-0.5 hover:bg-cyan/90 hover:shadow-glow">
-                Visit GitHub Profile
-            </a>
-        </div>
-    </section>
 
     <!-- Contact -->
     <section id="contact" class="mx-auto max-w-7xl px-4 pb-20 sm:px-6 sm:pb-24 lg:px-8">
