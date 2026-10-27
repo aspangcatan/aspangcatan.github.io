@@ -1,401 +1,886 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Asnaui Pangcatan - Senior Full Stack Developer building high-impact healthcare and public-sector digital systems.">
-    <meta property="og:title" content="Asnaui Pangcatan | Senior Full Stack Developer">
-    <meta property="og:description" content="Portfolio of a full stack engineer delivering mission-critical systems for hospitals and public service teams.">
-    <meta property="og:image" content="assets/assets/img/profile-pic.png">
-    <title>Asnaui Pangcatan | Senior Full Stack Developer</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Asnaui Pangcatan | Full Stack Developer</title>
+    <meta
+      name="description"
+      content="Asnaui Pangcatan is a full stack developer in Cebu, Philippines, building web and mobile systems — from internal business tools to online booking platforms — with Laravel, Vue, JavaScript, and Android."
+    />
+    <meta name="author" content="Asnaui Pangcatan" />
+    <meta name="theme-color" content="#1C1C2B" />
+    <link rel="canonical" href="https://aspangcatan.github.io/" />
+    <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml" />
 
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script defer src="https://unpkg.com/alpinejs"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Sora:wght@600;700;800&display=swap" rel="stylesheet">
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://aspangcatan.github.io/" />
+    <meta
+      property="og:title"
+      content="Asnaui Pangcatan | Full Stack Developer"
+    />
+    <meta
+      property="og:description"
+      content="Practical web and mobile systems that replace manual processes — HR platforms, workflow and approval tools, and online booking."
+    />
+    <meta
+      property="og:image"
+      content="https://aspangcatan.github.io/assets/img/og-image.jpg"
+    />
+    <meta name="twitter:card" content="summary" />
 
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        ink: "#070B14",
-                        panel: "#0F172A",
-                        panelSoft: "#111D36",
-                        line: "#24324E",
-                        cyan: "#22D3EE",
-                        emerald: "#34D399",
-                        textSoft: "#C7D2FE"
-                    },
-                    fontFamily: {
-                        sans: ["Manrope", "sans-serif"],
-                        display: ["Sora", "sans-serif"]
-                    },
-                    boxShadow: {
-                        card: "0 14px 40px rgba(7, 11, 20, 0.42)",
-                        glow: "0 0 0 1px rgba(34, 211, 238, 0.25), 0 10px 30px rgba(34, 211, 238, 0.12)"
-                    },
-                    keyframes: {
-                        fadeUp: {
-                            "0%": { opacity: 0, transform: "translateY(16px)" },
-                            "100%": { opacity: 1, transform: "translateY(0)" }
-                        },
-                        pulseGlow: {
-                            "0%, 100%": { boxShadow: "0 0 0 0 rgba(52, 211, 153, 0.0)" },
-                            "50%": { boxShadow: "0 0 0 10px rgba(52, 211, 153, 0.08)" }
-                        },
-                        floatY: {
-                            "0%, 100%": { transform: "translateY(0)" },
-                            "50%": { transform: "translateY(-6px)" }
-                        },
-                        gradientMove: {
-                            "0%, 100%": { backgroundPosition: "0% 50%" },
-                            "50%": { backgroundPosition: "100% 50%" }
-                        }
-                    },
-                    animation: {
-                        fadeUp: "fadeUp .7s ease-out both",
-                        pulseGlow: "pulseGlow 4s ease-in-out infinite",
-                        floatY: "floatY 6s ease-in-out infinite",
-                        gradientMove: "gradientMove 12s ease infinite"
-                    }
-                }
-            }
-        };
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Asnaui Pangcatan",
+        "jobTitle": "Full Stack Developer",
+        "url": "https://aspangcatan.github.io/",
+        "image": "https://aspangcatan.github.io/assets/img/og-image.jpg",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Cebu",
+          "addressCountry": "PH"
+        },
+        "alumniOf": "University of Cebu",
+        "sameAs": ["https://github.com/aspangcatan"]
+      }
     </script>
 
-    <style>
-        .grid-bg {
-            background-image: linear-gradient(to right, rgba(148, 163, 184, 0.08) 1px, transparent 1px), linear-gradient(to bottom, rgba(148, 163, 184, 0.08) 1px, transparent 1px);
-            background-size: 48px 48px;
-        }
+    <script>
+      document.documentElement.classList.add("js");
+    </script>
+    <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+    <script>
+      const token = (name) => `rgb(var(--c-${name}) / <alpha-value>)`;
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              bg: token("bg"),
+              "bg-deep": token("bg-deep"),
+              surface: token("surface"),
+              "surface-2": token("surface-2"),
+              line: token("line"),
+              ink: token("text"),
+              muted: token("muted"),
+              violet: token("violet"),
+              "violet-strong": token("violet-strong"),
+              pink: token("pink"),
+              success: token("success"),
+            },
+            fontFamily: {
+              sans: ["Lato", "system-ui", "sans-serif"],
+              mono: ["JetBrains Mono", "ui-monospace", "monospace"],
+            },
+          },
+        },
+      };
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Lato:wght@400;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="assets/css/site.css" />
+    <script defer src="assets/js/projects.js"></script>
+    <script defer src="assets/js/main.js"></script>
+    <script
+      defer
+      src="https://unpkg.com/alpinejs@3.14.1/dist/cdn.min.js"
+    ></script>
+  </head>
+  <body class="font-sans antialiased" x-data="portfolio">
+    <!-- Icon sprite (Lucide-style strokes) -->
+    <svg width="0" height="0" class="absolute" aria-hidden="true">
+      <symbol id="i-code" viewBox="0 0 24 24"><path d="m16 18 6-6-6-6M8 6l-6 6 6 6" /></symbol>
+      <symbol id="i-github" viewBox="0 0 24 24"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.4 5.4 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4" /><path d="M9 18c-4.51 2-5-2-7-2" /></symbol>
+      <symbol id="i-mail" viewBox="0 0 24 24"><rect width="20" height="16" x="2" y="4" rx="2" /><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" /></symbol>
+      <symbol id="i-phone" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z" /></symbol>
+      <symbol id="i-pin" viewBox="0 0 24 24"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z" /><circle cx="12" cy="10" r="3" /></symbol>
+      <symbol id="i-download" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3" /></symbol>
+      <symbol id="i-arrow-right" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7" /></symbol>
+      <symbol id="i-arrow-up" viewBox="0 0 24 24"><path d="m5 12 7-7 7 7M12 19V5" /></symbol>
+      <symbol id="i-external" viewBox="0 0 24 24"><path d="M15 3h6v6M10 14 21 3M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" /></symbol>
+      <symbol id="i-x" viewBox="0 0 24 24"><path d="M18 6 6 18M6 6l12 12" /></symbol>
+      <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16" /></symbol>
+      <symbol id="i-check" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5" /></symbol>
+      <symbol id="i-copy" viewBox="0 0 24 24"><rect width="14" height="14" x="8" y="8" rx="2" /><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2" /></symbol>
+      <symbol id="i-users" viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" /><circle cx="9" cy="7" r="4" /><path d="M22 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75" /></symbol>
+      <symbol id="i-pill" viewBox="0 0 24 24"><path d="m10.5 20.5 10-10a4.95 4.95 0 1 0-7-7l-10 10a4.95 4.95 0 1 0 7 7ZM8.5 8.5l7 7" /></symbol>
+      <symbol id="i-target" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" /><circle cx="12" cy="12" r="6" /><circle cx="12" cy="12" r="2" /></symbol>
+      <symbol id="i-clipboard" viewBox="0 0 24 24"><rect width="8" height="4" x="8" y="2" rx="1" /><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2" /><path d="m9 14 2 2 4-4" /></symbol>
+      <symbol id="i-monitor" viewBox="0 0 24 24"><rect width="20" height="14" x="2" y="3" rx="2" /><path d="M8 21h8M12 17v4" /></symbol>
+      <symbol id="i-server" viewBox="0 0 24 24"><rect width="20" height="8" x="2" y="2" rx="2" /><rect width="20" height="8" x="2" y="14" rx="2" /><path d="M6 6h.01M6 18h.01" /></symbol>
+      <symbol id="i-layout" viewBox="0 0 24 24"><rect width="18" height="18" x="3" y="3" rx="2" /><path d="M3 9h18M9 21V9" /></symbol>
+      <symbol id="i-database" viewBox="0 0 24 24"><ellipse cx="12" cy="5" rx="9" ry="3" /><path d="M3 5v14a9 3 0 0 0 18 0V5M3 12a9 3 0 0 0 18 0" /></symbol>
+      <symbol id="i-smartphone" viewBox="0 0 24 24"><rect width="14" height="20" x="5" y="2" rx="2" /><path d="M12 18h.01" /></symbol>
+      <symbol id="i-wrench" viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z" /></symbol>
+      <symbol id="i-layers" viewBox="0 0 24 24"><path d="M12.83 2.18a2 2 0 0 0-1.66 0L2.6 6.08a1 1 0 0 0 0 1.83l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 0-1.83ZM22 17.65l-9.17 4.16a2 2 0 0 1-1.66 0L2 17.65M22 12.65l-9.17 4.16a2 2 0 0 1-1.66 0L2 12.65" /></symbol>
+      <symbol id="i-shield" viewBox="0 0 24 24"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z" /><path d="m9 12 2 2 4-4" /></symbol>
+      <symbol id="i-pointer" viewBox="0 0 24 24"><path d="M14 4.1 12 6M5.1 8l-2.9-.8M6 12l-1.9 2M7.2 2.2 8 5.1" /><path d="M9.04 9.69a.5.5 0 0 1 .65-.65l11 4.5a.5.5 0 0 1-.07.95l-4.35 1.04a1 1 0 0 0-.74.74l-1.04 4.35a.5.5 0 0 1-.95.07z" /></symbol>
+      <symbol id="i-briefcase" viewBox="0 0 24 24"><path d="M16 20V4a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16" /><rect width="20" height="14" x="2" y="6" rx="2" /></symbol>
+      <symbol id="i-calendar" viewBox="0 0 24 24"><rect width="18" height="18" x="3" y="4" rx="2" /><path d="M16 2v4M8 2v4M3 10h18" /></symbol>
+      <symbol id="i-graduation" viewBox="0 0 24 24"><path d="M21.42 10.92a1 1 0 0 0-.02-1.84L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.83l8.57 3.91a2 2 0 0 0 1.66 0zM22 10v6M6 12.5V16a6 3 0 0 0 12 0v-3.5" /></symbol>
+    </svg>
 
-        .reveal {
-            opacity: 0;
-            transform: translateY(18px);
-            transition: opacity .7s ease, transform .7s ease;
-        }
+    <a href="#main" class="skip-link">Skip to content</a>
 
-        .reveal.show {
-            opacity: 1;
-            transform: translateY(0);
-        }
-    </style>
-</head>
-<body class="bg-ink text-white antialiased selection:bg-cyan/30 selection:text-white" x-data="{ mobileOpen:false }">
-<!-- Ambient background -->
-<div class="fixed inset-0 -z-20 bg-ink"></div>
-<div class="fixed inset-0 -z-10 grid-bg [mask-image:radial-gradient(circle_at_center,black,transparent_85%)]"></div>
-<div class="fixed inset-x-0 top-0 -z-10 h-[28rem] bg-gradient-to-r from-cyan/20 via-emerald/10 to-cyan/20 bg-[length:200%_200%] blur-3xl animate-gradientMove"></div>
+    <!-- ===================== Header ===================== -->
+    <header
+      class="sticky top-0 z-50 border-b transition-colors duration-300"
+      :class="scrolled || mobileOpen ? 'border-line/10 bg-bg/85 backdrop-blur-xl' : 'border-transparent bg-transparent'"
+    >
+      <div class="container-x flex h-[4.5rem] items-center justify-between">
+        <a
+          href="#home"
+          class="flex items-center gap-3"
+          aria-label="Asnaui Pangcatan, back to top"
+        >
+          <span class="logo-mark" aria-hidden="true">&lt;/&gt;</span>
+          <span
+            class="text-lg font-black tracking-[0.04em] text-ink"
+            aria-hidden="true"
+            ><span class="text-[1.35rem] text-violet">A</span>SNAUI</span
+          >
+        </a>
 
-<!-- Navigation -->
-<header class="sticky top-0 z-50 border-b border-white/10 bg-ink/75 backdrop-blur-xl">
-    <div class="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
-        <a href="#hero" class="font-display text-base font-bold tracking-tight sm:text-lg">Asnaui Pangcatan</a>
-        <nav class="hidden items-center gap-8 text-sm text-textSoft/90 md:flex">
-            <a href="#about" class="transition hover:text-white">About</a>
-            <a href="#experience" class="transition hover:text-white">Experience</a>
-            <a href="#projects" class="transition hover:text-white">Projects</a>
-            <a href="#contact" class="transition hover:text-white">Contact</a>
+        <nav aria-label="Primary" class="hidden items-center gap-8 md:flex">
+          <a href="#about" class="nav-link" :aria-current="(active === 'about').toString()">About</a>
+          <a href="#experience" class="nav-link" :aria-current="(active === 'experience').toString()">Experience</a>
+          <a href="#projects" class="nav-link" :aria-current="(active === 'projects').toString()">Projects</a>
+          <a href="#contact" class="nav-link" :aria-current="(active === 'contact').toString()">Contact</a>
+          <a href="assets/Resume.docx" download class="btn btn-outline btn-sm">
+            <svg class="icon" aria-hidden="true"><use href="#i-download" /></svg>
+            Resume
+          </a>
         </nav>
-        <button @click="mobileOpen=!mobileOpen" class="inline-flex rounded-lg border border-white/15 p-2 md:hidden" aria-label="Open menu">
-            <svg x-show="!mobileOpen" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M4 6h16M4 12h16M4 18h16"/>
-            </svg>
-            <svg x-show="mobileOpen" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M6 18L18 6M6 6l12 12"/>
-            </svg>
+
+        <button
+          type="button"
+          class="grid h-11 w-11 place-items-center rounded-xl border border-line/10 bg-surface/70 text-ink md:hidden"
+          @click="mobileOpen = !mobileOpen"
+          :aria-expanded="mobileOpen.toString()"
+          aria-controls="mobile-menu"
+          aria-label="Toggle navigation menu"
+        >
+          <svg class="icon" aria-hidden="true" x-show="!mobileOpen"><use href="#i-menu" /></svg>
+          <svg class="icon" aria-hidden="true" x-show="mobileOpen" x-cloak><use href="#i-x" /></svg>
         </button>
-    </div>
-    <nav x-show="mobileOpen" x-transition.origin.top class="md:hidden border-t border-white/10 bg-panel/95 px-4 pb-4 pt-3 sm:px-6">
-        <div class="flex flex-col gap-3 text-sm text-textSoft">
-            <a href="#about" @click="mobileOpen=false" class="rounded-lg px-2 py-2 transition hover:bg-white/5 hover:text-white">About</a>
-            <a href="#experience" @click="mobileOpen=false" class="rounded-lg px-2 py-2 transition hover:bg-white/5 hover:text-white">Experience</a>
-            <a href="#projects" @click="mobileOpen=false" class="rounded-lg px-2 py-2 transition hover:bg-white/5 hover:text-white">Projects</a>
-            <a href="#contact" @click="mobileOpen=false" class="rounded-lg px-2 py-2 transition hover:bg-white/5 hover:text-white">Contact</a>
-        </div>
-    </nav>
-</header>
+      </div>
 
-<main>
-    <!-- Hero -->
-    <section id="hero" class="mx-auto max-w-7xl px-4 pb-16 pt-12 sm:px-6 sm:pb-20 lg:px-8 lg:pt-20">
-        <div class="grid items-center gap-12 lg:grid-cols-12">
-            <div class="lg:col-span-7">
-                <p class="inline-flex items-center gap-2 rounded-full border border-emerald/35 bg-emerald/10 px-4 py-1 text-xs font-semibold uppercase tracking-[0.16em] text-emerald animate-pulseGlow">
-                    Available for Remote Roles
-                </p>
-                <h1 class="mt-6 font-display text-4xl font-extrabold leading-tight sm:text-5xl lg:text-6xl">
-                    Senior Developer Building Reliable Systems For
-                    <span class="bg-gradient-to-r from-cyan via-emerald to-cyan bg-[length:200%_200%] bg-clip-text text-transparent animate-gradientMove">Healthcare Operations</span>
-                </h1>
-                <p class="mt-6 max-w-2xl text-base leading-relaxed text-textSoft sm:text-lg">
-                    I design and ship full stack web and mobile systems used by hospital teams and government institutions, with clear architecture, maintainable code, and measurable operational impact.
-                </p>
-                <div class="mt-8 flex flex-wrap gap-3">
-                    <a href="#projects" class="rounded-xl bg-cyan px-5 py-3 text-sm font-semibold text-slate-900 transition duration-300 hover:-translate-y-0.5 hover:bg-cyan/90 hover:shadow-glow">View Projects</a>
-                    <a href="assets/Resume.docx" download="Resume.docx" class="rounded-xl border border-emerald/35 bg-emerald/10 px-5 py-3 text-sm font-semibold text-emerald transition duration-300 hover:-translate-y-0.5 hover:bg-emerald/20">Download Resume</a>
-                </div>
+      <nav
+        id="mobile-menu"
+        aria-label="Mobile"
+        x-show="mobileOpen"
+        x-cloak
+        x-transition.opacity.duration.200ms
+        @keydown.escape.window="mobileOpen = false"
+        class="border-t border-line/10 md:hidden"
+      >
+        <div class="container-x flex flex-col gap-1 py-4">
+          <a href="#about" @click="mobileOpen = false" class="rounded-xl px-3 py-3 font-bold text-muted hover:bg-surface hover:text-ink">About</a>
+          <a href="#experience" @click="mobileOpen = false" class="rounded-xl px-3 py-3 font-bold text-muted hover:bg-surface hover:text-ink">Experience</a>
+          <a href="#projects" @click="mobileOpen = false" class="rounded-xl px-3 py-3 font-bold text-muted hover:bg-surface hover:text-ink">Projects</a>
+          <a href="#contact" @click="mobileOpen = false" class="rounded-xl px-3 py-3 font-bold text-muted hover:bg-surface hover:text-ink">Contact</a>
+          <a href="assets/Resume.docx" download class="btn btn-outline mt-2">
+            <svg class="icon" aria-hidden="true"><use href="#i-download" /></svg>
+            Download Resume
+          </a>
+        </div>
+      </nav>
+    </header>
+
+    <main id="main">
+      <!-- ===================== Hero ===================== -->
+      <section id="home" class="relative -mt-[4.5rem] overflow-hidden pt-[4.5rem]">
+        <div class="hero-glow" aria-hidden="true"></div>
+        <div
+          class="container-x relative grid items-center gap-14 py-16 sm:py-20 lg:min-h-[calc(100svh-4.5rem)] lg:grid-cols-[1.05fr_1fr] lg:gap-8 lg:py-12"
+        >
+          <div>
+            <p class="eyebrow">Full Stack Developer · Cebu, Philippines</p>
+            <h1
+              class="mt-6 text-[clamp(2.6rem,5.4vw,4.25rem)] font-black leading-[1.06] tracking-[-0.02em]"
+            >
+              Hi,<br />
+              I’m Asnaui,<br />
+              <span class="text-pink">Web Developer</span>
+            </h1>
+            <p class="mt-4 font-mono text-[0.8rem] text-muted">
+              Laravel <span class="text-violet/70">/</span> PHP
+              <span class="text-violet/70">/</span> JavaScript
+              <span class="text-violet/70">/</span> Android (Java)
+              <span class="text-violet/70">/</span> MySQL
+            </p>
+            <p class="mt-6 max-w-xl text-lg leading-relaxed text-muted">
+              I build practical web and mobile software — HR platforms,
+              workflow and approval tools, and booking systems — that replace
+              manual processes and make everyday work easier for the people
+              who use it.
+            </p>
+            <div class="mt-9 flex flex-wrap gap-4">
+              <a href="#projects" class="btn btn-primary">
+                View My Projects
+                <svg class="icon" aria-hidden="true"><use href="#i-arrow-right" /></svg>
+              </a>
+              <a href="#contact" class="btn btn-outline">Contact Me</a>
             </div>
-            <div class="lg:col-span-5">
-                <div class="relative mx-auto max-w-md animate-floatY">
-                    <div class="absolute -inset-6 -z-10 rounded-[2rem] bg-gradient-to-tr from-cyan/20 via-emerald/15 to-cyan/10 blur-2xl"></div>
-                    <div class="overflow-hidden rounded-[1.75rem] border border-white/10 bg-panel/80 p-3 shadow-card backdrop-blur-sm">
-                        <picture>
-                            <source media="(max-width: 768px)" srcset="assets/img/hero-img-768.jpg">
-                            <source media="(min-width: 769px)" srcset="assets/img/hero-img-1280.jpg">
-                            <img src="assets/img/hero-img-1280.jpg" alt="Developer workspace setup" loading="eager" decoding="async" class="h-full w-full rounded-2xl object-cover">
-                        </picture>
+
+            <ul
+              class="mt-10 flex items-center gap-3 text-muted lg:flex-col lg:items-start lg:gap-1"
+              aria-label="Profiles and contact"
+            >
+              <li aria-hidden="true" class="mr-2 h-px w-10 bg-violet/60 lg:mb-2 lg:ml-5 lg:mr-0 lg:h-12 lg:w-px"></li>
+              <li>
+                <a href="https://github.com/aspangcatan" target="_blank" rel="noopener noreferrer" class="grid h-10 w-10 place-items-center rounded-lg transition hover:bg-surface hover:text-violet" aria-label="GitHub profile (opens in a new tab)">
+                  <svg class="icon" aria-hidden="true"><use href="#i-github" /></svg>
+                </a>
+              </li>
+              <li>
+                <a href="mailto:naui.pangcatan@gmail.com" class="grid h-10 w-10 place-items-center rounded-lg transition hover:bg-surface hover:text-violet" aria-label="Email Asnaui">
+                  <svg class="icon" aria-hidden="true"><use href="#i-mail" /></svg>
+                </a>
+              </li>
+              <li>
+                <a href="assets/Resume.docx" download class="grid h-10 w-10 place-items-center rounded-lg transition hover:bg-surface hover:text-violet" aria-label="Download resume (DOCX)">
+                  <svg class="icon" aria-hidden="true"><use href="#i-download" /></svg>
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Illustrative product visual (decorative) -->
+          <div class="relative" aria-hidden="true">
+            <div class="hero-stage">
+              <div class="hero-tilt">
+                <div class="shape-orb float-slower"></div>
+                <div class="device">
+                  <p class="device-title">Daily Time Record</p>
+                  <p class="device-sub">GET /hris/dtr?period=current</p>
+                  <div class="device-row">
+                    <span class="device-avatar"></span>
+                    <span class="flex-1 space-y-1.5"><span class="device-bar block w-4/5"></span><span class="device-bar block w-1/2 opacity-60"></span></span>
+                    <span class="device-pill bg-violet/70"></span>
+                  </div>
+                  <div class="device-row">
+                    <span class="device-avatar"></span>
+                    <span class="flex-1 space-y-1.5"><span class="device-bar block w-3/5"></span><span class="device-bar block w-2/5 opacity-60"></span></span>
+                    <span class="device-pill bg-pink/70"></span>
+                  </div>
+                  <div class="device-row">
+                    <span class="device-avatar"></span>
+                    <span class="flex-1 space-y-1.5"><span class="device-bar block w-full"></span><span class="device-bar block w-1/3 opacity-60"></span></span>
+                    <span class="device-pill bg-violet/70"></span>
+                  </div>
+                  <div class="device-row">
+                    <span class="device-avatar"></span>
+                    <span class="flex-1 space-y-1.5"><span class="device-bar block w-2/3"></span><span class="device-bar block w-1/2 opacity-60"></span></span>
+                    <span class="device-pill bg-line/20"></span>
+                  </div>
+                  <div class="device-row">
+                    <span class="device-avatar"></span>
+                    <span class="flex-1 space-y-1.5"><span class="device-bar block w-3/4"></span><span class="device-bar block w-1/4 opacity-60"></span></span>
+                    <span class="device-pill bg-violet/70"></span>
+                  </div>
+                </div>
+
+                <div class="float-card float-code float-slow">
+                  <div class="flex gap-1.5">
+                    <span class="h-2.5 w-2.5 rounded-full bg-pink/80"></span>
+                    <span class="h-2.5 w-2.5 rounded-full bg-violet/70"></span>
+                    <span class="h-2.5 w-2.5 rounded-full bg-line/25"></span>
+                  </div>
+<pre><span class="tok-c">// routes/web.php</span>
+Route::<span class="tok-f">middleware</span>(<span class="tok-s">'role:hr'</span>)
+  -&gt;<span class="tok-f">group</span>(<span class="tok-k">function</span> () {
+    Route::<span class="tok-f">get</span>(<span class="tok-s">'/dtr'</span>, ...);
+    Route::<span class="tok-f">post</span>(<span class="tok-s">'/leave'</span>, ...);
+  });</pre>
+                </div>
+
+                <div class="float-card float-roles float-slower">
+                  <p class="font-mono text-muted">access.roles</p>
+                  <ul class="mt-2 space-y-1.5 font-bold text-ink">
+                    <li class="flex items-center gap-2"><svg class="icon text-violet" style="width:1.1em;height:1.1em"><use href="#i-check" /></svg>Employee</li>
+                    <li class="flex items-center gap-2"><svg class="icon text-violet" style="width:1.1em;height:1.1em"><use href="#i-check" /></svg>Supervisor</li>
+                    <li class="flex items-center gap-2"><svg class="icon text-pink" style="width:1.1em;height:1.1em"><use href="#i-check" /></svg>Administrator</li>
+                  </ul>
+                </div>
+                <div class="shape-cone"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===================== About ===================== -->
+      <section id="about" class="section border-t border-line/5 bg-bg-deep/50">
+        <div class="container-x grid gap-12 lg:grid-cols-[20rem_1fr] lg:gap-16">
+          <div class="reveal">
+            <div class="card overflow-hidden p-2.5">
+              <img
+                src="assets/img/profile-pic-640.jpg"
+                alt="Portrait of Asnaui Pangcatan"
+                width="640"
+                height="640"
+                loading="lazy"
+                decoding="async"
+                class="aspect-square w-full rounded-2xl object-cover"
+              />
+            </div>
+            <dl class="card mt-4 space-y-4 p-5 text-sm">
+              <div class="flex gap-3">
+                <svg class="icon mt-0.5 text-violet" aria-hidden="true"><use href="#i-graduation" /></svg>
+                <div>
+                  <dt class="font-bold text-ink">BS Information Technology</dt>
+                  <dd class="text-muted">University of Cebu – Main Campus · 2012–2016</dd>
+                </div>
+              </div>
+              <div class="flex gap-3">
+                <svg class="icon mt-0.5 text-violet" aria-hidden="true"><use href="#i-pin" /></svg>
+                <div>
+                  <dt class="font-bold text-ink">Based in</dt>
+                  <dd class="text-muted">Cebu, Philippines · open to remote roles</dd>
+                </div>
+              </div>
+            </dl>
+          </div>
+
+          <div class="reveal reveal-delay-1">
+            <p class="eyebrow">About me</p>
+            <h2 class="section-title max-w-2xl">
+              Software that fits how people actually work.
+            </h2>
+            <div class="mt-6 max-w-2xl space-y-4 text-[1.0625rem] leading-relaxed text-muted">
+              <p>
+                I’m Asnaui Pangcatan, a full stack developer from Cebu. I started
+                as an Android developer in 2016 and have since built web and
+                mobile systems for organizations and small businesses — from
+                internal tools for HR and operations teams to customer-facing
+                booking sites.
+              </p>
+              <p>
+                Most of what I build replaces paper-based or manual processes:
+                employee records and time tracking, performance evaluations,
+                approval workflows, and online reservations with payment
+                verification. I handle the full cycle — working out requirements
+                with the people who will use the system, designing the data
+                model, building and deploying, then supporting it in daily use.
+              </p>
+            </div>
+
+            <ul class="mt-10 grid gap-4 sm:grid-cols-2">
+              <li class="card p-5">
+                <svg class="icon text-violet" aria-hidden="true"><use href="#i-pointer" /></svg>
+                <h3 class="mt-3 font-bold text-ink">Usable by real staff</h3>
+                <p class="mt-1.5 text-sm leading-relaxed text-muted">Interfaces shaped around daily users and refined through direct stakeholder feedback.</p>
+              </li>
+              <li class="card p-5">
+                <svg class="icon text-violet" aria-hidden="true"><use href="#i-shield" /></svg>
+                <h3 class="mt-3 font-bold text-ink">Secure by design</h3>
+                <p class="mt-1.5 text-sm leading-relaxed text-muted">Role-based access, input validation, and audit trails wherever records matter.</p>
+              </li>
+              <li class="card p-5">
+                <svg class="icon text-violet" aria-hidden="true"><use href="#i-layers" /></svg>
+                <h3 class="mt-3 font-bold text-ink">Maintainable</h3>
+                <p class="mt-1.5 text-sm leading-relaxed text-muted">Clear architecture that is straightforward to extend and support long term.</p>
+              </li>
+              <li class="card p-5">
+                <svg class="icon text-violet" aria-hidden="true"><use href="#i-briefcase" /></svg>
+                <h3 class="mt-3 font-bold text-ink">Built for the workflow</h3>
+                <p class="mt-1.5 text-sm leading-relaxed text-muted">Features scoped to the real process — from request to approval, or booking to confirmed payment.</p>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===================== Skills ===================== -->
+      <section id="skills" class="section">
+        <div class="container-x">
+          <div class="reveal">
+            <p class="eyebrow">Expertise</p>
+            <h2 class="section-title">Tools I use to ship and support production systems.</h2>
+          </div>
+          <div class="reveal reveal-delay-1 mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+            <article class="card card-hover p-6">
+              <div class="grid h-11 w-11 place-items-center rounded-xl bg-violet/10 text-violet"><svg class="icon" aria-hidden="true"><use href="#i-server" /></svg></div>
+              <h3 class="mt-5 text-lg font-bold">Backend Development</h3>
+              <p class="mt-1.5 text-sm text-muted">Business logic, workflows, and APIs.</p>
+              <ul class="mt-5 flex flex-wrap gap-2">
+                <li class="chip">PHP</li><li class="chip">Laravel</li><li class="chip">Node.js</li><li class="chip">Express.js</li><li class="chip">REST APIs</li><li class="chip">WebSocket</li>
+              </ul>
+            </article>
+            <article class="card card-hover p-6">
+              <div class="grid h-11 w-11 place-items-center rounded-xl bg-violet/10 text-violet"><svg class="icon" aria-hidden="true"><use href="#i-layout" /></svg></div>
+              <h3 class="mt-5 text-lg font-bold">Frontend Development</h3>
+              <p class="mt-1.5 text-sm text-muted">Responsive interfaces for daily operations.</p>
+              <ul class="mt-5 flex flex-wrap gap-2">
+                <li class="chip">HTML</li><li class="chip">CSS</li><li class="chip">JavaScript</li><li class="chip">Tailwind CSS</li><li class="chip">Bootstrap</li><li class="chip">Vue</li>
+              </ul>
+            </article>
+            <article class="card card-hover p-6">
+              <div class="grid h-11 w-11 place-items-center rounded-xl bg-violet/10 text-violet"><svg class="icon" aria-hidden="true"><use href="#i-smartphone" /></svg></div>
+              <h3 class="mt-5 text-lg font-bold">Mobile Development</h3>
+              <p class="mt-1.5 text-sm text-muted">Native Android apps for internal tools and attendance workflows.</p>
+              <ul class="mt-5 flex flex-wrap gap-2">
+                <li class="chip">Android</li><li class="chip">Java</li>
+              </ul>
+            </article>
+            <article class="card card-hover p-6">
+              <div class="grid h-11 w-11 place-items-center rounded-xl bg-violet/10 text-violet"><svg class="icon" aria-hidden="true"><use href="#i-database" /></svg></div>
+              <h3 class="mt-5 text-lg font-bold">Database &amp; Reporting</h3>
+              <p class="mt-1.5 text-sm text-muted">Centralized records, reports, and dashboards.</p>
+              <ul class="mt-5 flex flex-wrap gap-2">
+                <li class="chip">MySQL</li><li class="chip">Data modeling</li><li class="chip">Reports</li><li class="chip">Dashboards</li>
+              </ul>
+            </article>
+            <article class="card card-hover p-6">
+              <div class="grid h-11 w-11 place-items-center rounded-xl bg-violet/10 text-violet"><svg class="icon" aria-hidden="true"><use href="#i-layers" /></svg></div>
+              <h3 class="mt-5 text-lg font-bold">Integration &amp; Automation</h3>
+              <p class="mt-1.5 text-sm text-muted">Turning manual processes into reliable workflows.</p>
+              <ul class="mt-5 flex flex-wrap gap-2">
+                <li class="chip">Workflow automation</li><li class="chip">Approval flows</li><li class="chip">Role-based access</li><li class="chip">Audit trails</li><li class="chip">API integration</li>
+              </ul>
+            </article>
+            <article class="card card-hover p-6">
+              <div class="grid h-11 w-11 place-items-center rounded-xl bg-violet/10 text-violet"><svg class="icon" aria-hidden="true"><use href="#i-wrench" /></svg></div>
+              <h3 class="mt-5 text-lg font-bold">Workflow &amp; Delivery</h3>
+              <p class="mt-1.5 text-sm text-muted">From version control to deployment and support.</p>
+              <ul class="mt-5 flex flex-wrap gap-2">
+                <li class="chip">Git</li><li class="chip">GitHub</li><li class="chip">Postman</li><li class="chip">VS Code</li><li class="chip">Deployment</li><li class="chip">Maintenance</li>
+              </ul>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===================== Experience ===================== -->
+      <section id="experience" class="section border-t border-line/5 bg-bg-deep/50">
+        <div class="container-x grid gap-12 lg:grid-cols-[1fr_2fr] lg:gap-16">
+          <div class="reveal lg:sticky lg:top-28 lg:self-start">
+            <p class="eyebrow">Experience</p>
+            <h2 class="section-title">Work built around real operational pressure.</h2>
+            <p class="section-lead">
+              Building and supporting production systems since 2016.
+            </p>
+            <a href="assets/Resume.docx" download class="btn btn-ghost mt-8">
+              <svg class="icon" aria-hidden="true"><use href="#i-download" /></svg>
+              Full resume (DOCX)
+            </a>
+          </div>
+
+          <ol class="timeline reveal reveal-delay-1 space-y-6">
+            <li class="relative pl-10">
+              <span class="timeline-dot is-current" aria-hidden="true"></span>
+              <article class="card p-6">
+                <div class="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
+                  <h3 class="text-lg font-bold">Computer Maintenance Technologist II / Software Developer</h3>
+                  <p class="font-mono text-xs text-violet">2022 — Present</p>
+                </div>
+                <p class="mt-1 text-sm font-bold text-muted">Cebu South Medical Center</p>
+                <ul class="mt-4 space-y-2 text-sm leading-relaxed text-muted marker:text-violet list-disc pl-5">
+                  <li>Delivered the Human Resource Information System, the Electronic Antimicrobial Stewardship Program (E-AMSP), and digital certification workflows.</li>
+                  <li>Reduced manual processing through automation and better internal tracking.</li>
+                  <li>Supported daily systems used by both clinical and administrative teams.</li>
+                </ul>
+              </article>
+            </li>
+            <li class="relative pl-10">
+              <span class="timeline-dot" aria-hidden="true"></span>
+              <article class="card p-6">
+                <div class="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
+                  <h3 class="text-lg font-bold">Computer Maintenance Technologist II (Job Order) / Software Developer</h3>
+                  <p class="font-mono text-xs text-violet">2019 — 2022</p>
+                </div>
+                <p class="mt-1 text-sm font-bold text-muted">Vicente Sotto Memorial Medical Center</p>
+                <ul class="mt-4 space-y-2 text-sm leading-relaxed text-muted marker:text-violet list-disc pl-5">
+                  <li>Built nurse scheduling, OR planning, COVID information, and queuing systems.</li>
+                  <li>Improved inter-department coordination with tailored workflow apps.</li>
+                  <li>Maintained tools used in high-volume hospital operations.</li>
+                </ul>
+              </article>
+            </li>
+            <li class="relative pl-10">
+              <span class="timeline-dot" aria-hidden="true"></span>
+              <article class="card p-6">
+                <div class="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
+                  <h3 class="text-lg font-bold">Computer Programmer I (Job Order)</h3>
+                  <p class="font-mono text-xs text-violet">2017 — 2019</p>
+                </div>
+                <p class="mt-1 text-sm font-bold text-muted">Department of Health Regional Office VII</p>
+                <ul class="mt-4 space-y-2 text-sm leading-relaxed text-muted marker:text-violet list-disc pl-5">
+                  <li>Developed mobile DTR solutions for distributed government teams.</li>
+                  <li>Digitized manual processes into centralized records and dashboards.</li>
+                  <li>Worked directly with stakeholders to refine features and implementation.</li>
+                </ul>
+              </article>
+            </li>
+            <li class="relative pl-10">
+              <span class="timeline-dot" aria-hidden="true"></span>
+              <article class="card p-6">
+                <div class="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
+                  <h3 class="text-lg font-bold">Software Developer I / Android Developer</h3>
+                  <p class="font-mono text-xs text-violet">2016 — 2017</p>
+                </div>
+                <p class="mt-1 text-sm font-bold text-muted">#Got-The-Experts</p>
+              </article>
+            </li>
+          </ol>
+        </div>
+      </section>
+
+      <!-- ===================== Projects ===================== -->
+      <section id="projects" class="section">
+        <div class="container-x">
+          <div class="reveal flex flex-col gap-8 lg:flex-row lg:items-end lg:justify-between">
+            <div>
+              <p class="eyebrow">Featured projects</p>
+              <h2 class="section-title">Systems I’ve built.</h2>
+              <p class="section-lead">
+                Real systems in daily use, built around the people who run them.
+              </p>
+            </div>
+            <div class="flex flex-wrap gap-2" role="group" aria-label="Filter projects by category">
+              <template x-for="c in categories" :key="c">
+                <button type="button" class="filter-btn" :aria-pressed="(filter === c).toString()" @click="filter = c" x-text="c"></button>
+              </template>
+            </div>
+          </div>
+
+          <noscript>
+            <p class="mt-10 text-muted">
+              Enable JavaScript to browse projects, or
+              <a class="text-violet underline" href="assets/Resume.docx">download the resume</a>
+              for full project details.
+            </p>
+          </noscript>
+
+          <div class="reveal reveal-delay-1 mt-12 grid gap-6 md:grid-cols-2">
+            <template x-for="p in filtered" :key="p.id">
+              <article
+                class="project-card card card-hover flex flex-col overflow-hidden"
+                :class="p.featured && filter === 'All' ? 'is-featured md:col-span-2 lg:grid lg:grid-cols-[1.15fr_1fr]' : ''"
+                :style="`--accent: var(--c-${p.accent || 'violet'})`"
+              >
+                <div class="project-media">
+                  <template x-if="p.image">
+                    <img :src="p.image.src" :alt="p.image.alt" :width="p.image.width" :height="p.image.height" loading="lazy" decoding="async" />
+                  </template>
+                  <template x-if="!p.image">
+                    <div class="project-placeholder" aria-hidden="true">
+                      <div class="window p-4">
+                        <div class="flex gap-1.5">
+                          <span class="h-2 w-2 rounded-full bg-pink/70"></span>
+                          <span class="h-2 w-2 rounded-full bg-violet/60"></span>
+                          <span class="h-2 w-2 rounded-full bg-line/20"></span>
+                        </div>
+                        <div class="mt-4 flex items-center gap-3">
+                          <span class="glyph"><svg class="icon"><use :href="'#i-' + p.icon" /></svg></span>
+                          <span class="flex-1 space-y-2"><span class="device-bar block w-3/4"></span><span class="device-bar block w-1/2 opacity-60"></span></span>
+                        </div>
+                        <div class="mt-4 grid grid-cols-3 gap-2">
+                          <span class="h-8 rounded-md bg-line/5"></span>
+                          <span class="h-8 rounded-md" style="background: rgb(var(--accent) / 0.18)"></span>
+                          <span class="h-8 rounded-md bg-line/5"></span>
+                        </div>
+                      </div>
                     </div>
+                  </template>
                 </div>
-            </div>
-        </div>
-    </section>
 
-    <!-- Key Achievements -->
-    <section class="mx-auto max-w-7xl px-4 pb-14 sm:px-6 sm:pb-16 lg:px-8">
-        <div class="reveal rounded-3xl border border-white/10 bg-panel/75 p-6 shadow-card backdrop-blur-sm sm:p-8">
-            <div class="flex flex-col gap-2 sm:flex-row sm:items-end sm:justify-between">
-                <h2 class="font-display text-2xl font-bold sm:text-3xl">Key Achievements</h2>
-                <p class="text-sm text-textSoft">Recruiter snapshot in under 10 seconds.</p>
-            </div>
-            <div class="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-                <article class="rounded-2xl border border-white/10 bg-panelSoft/80 p-5 transition duration-300 hover:-translate-y-1 hover:border-cyan/40">
-                    <p class="text-3xl font-extrabold text-cyan">8+</p>
-                    <p class="mt-1 text-sm text-textSoft">Years of experience</p>
-                </article>
-                <article class="rounded-2xl border border-white/10 bg-panelSoft/80 p-5 transition duration-300 hover:-translate-y-1 hover:border-cyan/40">
-                    <p class="text-3xl font-extrabold text-cyan">10+</p>
-                    <p class="mt-1 text-sm text-textSoft">Systems built</p>
-                </article>
-                <article class="rounded-2xl border border-white/10 bg-panelSoft/80 p-5 transition duration-300 hover:-translate-y-1 hover:border-cyan/40">
-                    <p class="text-3xl font-extrabold text-cyan">2</p>
-                    <p class="mt-1 text-sm text-textSoft">Government hospitals served</p>
-                </article>
-                <article class="rounded-2xl border border-white/10 bg-panelSoft/80 p-5 transition duration-300 hover:-translate-y-1 hover:border-cyan/40">
-                    <p class="text-3xl font-extrabold text-cyan">10K+</p>
-                    <p class="mt-1 text-sm text-textSoft">Users supported</p>
-                </article>
-            </div>
-        </div>
-    </section>
-
-    <!-- About -->
-    <section id="about" class="mx-auto max-w-7xl px-4 py-14 sm:px-6 sm:py-16 lg:px-8 lg:py-20">
-        <div class="grid items-start gap-10 lg:grid-cols-12">
-            <div class="reveal lg:col-span-4">
-                <div class="mx-auto max-w-xs overflow-hidden rounded-3xl border border-white/10 bg-panel/80 p-3 shadow-card">
-                    <img src="assets/img/profile-pic.png" alt="Asnaui Pangcatan portrait" class="h-full w-full rounded-2xl object-cover">
+                <div class="flex flex-1 flex-col p-6 sm:p-7">
+                  <div class="flex flex-wrap items-center gap-2">
+                    <span class="badge badge-accent" x-text="p.category"></span>
+                    <span class="badge badge-status" :data-status="p.status" x-text="p.status"></span>
+                  </div>
+                  <h3 class="mt-4 text-xl font-black leading-snug sm:text-2xl" x-text="p.title"></h3>
+                  <p class="mt-1 text-sm font-bold text-muted" x-show="p.subtitle" x-text="p.subtitle"></p>
+                  <p class="mt-4 leading-relaxed text-muted" x-text="p.summary"></p>
+                  <ul class="mt-5 space-y-2 text-sm text-ink/85">
+                    <template x-for="f in p.features.slice(0, 3)" :key="f">
+                      <li class="flex gap-2.5">
+                        <svg class="icon mt-0.5 text-violet" style="width:1.05em;height:1.05em" aria-hidden="true"><use href="#i-check" /></svg>
+                        <span x-text="f"></span>
+                      </li>
+                    </template>
+                  </ul>
+                  <ul class="mt-6 flex flex-wrap gap-2" aria-label="Technology stack">
+                    <template x-for="t in p.stack" :key="t">
+                      <li class="chip" x-text="t"></li>
+                    </template>
+                  </ul>
+                  <div class="mt-auto flex flex-wrap items-center gap-3 pt-7">
+                    <button type="button" class="btn btn-ghost btn-sm" @click="openProject(p)">
+                      View details
+                      <svg class="icon" aria-hidden="true"><use href="#i-arrow-right" /></svg>
+                    </button>
+                    <template x-if="p.links && p.links.demo">
+                      <a :href="p.links.demo" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm">Live demo <svg class="icon" aria-hidden="true"><use href="#i-external" /></svg></a>
+                    </template>
+                    <template x-if="p.links && p.links.source">
+                      <a :href="p.links.source" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm">Source <svg class="icon" aria-hidden="true"><use href="#i-github" /></svg></a>
+                    </template>
+                  </div>
                 </div>
-            </div>
-            <div class="reveal lg:col-span-8">
-                <h2 class="font-display text-3xl font-bold sm:text-4xl">About Me</h2>
-                <p class="mt-5 text-base leading-relaxed text-textSoft sm:text-lg">
-                    I build full stack systems that improve how hospitals run daily operations. My work includes internal HR platforms, queue management, attendance tools, and decision-support dashboards used by real staff in high-demand environments.
-                </p>
-                <p class="mt-4 text-base leading-relaxed text-textSoft sm:text-lg">
-                    I independently deliver projects from requirements and architecture to deployment and maintenance, focusing on fast workflows, clear UX, system reliability, and long-term maintainability.
-                </p>
-                <div class="mt-6 flex flex-wrap gap-2">
-                    <span class="rounded-full border border-white/15 bg-white/5 px-3 py-1 text-xs font-medium text-textSoft">Full Stack Development</span>
-                    <span class="rounded-full border border-white/15 bg-white/5 px-3 py-1 text-xs font-medium text-textSoft">Healthcare Systems</span>
-                    <span class="rounded-full border border-white/15 bg-white/5 px-3 py-1 text-xs font-medium text-textSoft">Independent Delivery</span>
-                    <span class="rounded-full border border-white/15 bg-white/5 px-3 py-1 text-xs font-medium text-textSoft">API & Mobile Integration</span>
+              </article>
+            </template>
+          </div>
+
+          <p class="reveal mt-8 text-sm text-muted">
+            These are internal systems for public institutions, so live demos
+            and source code aren’t publicly available. Happy to walk through
+            them in an interview.
+          </p>
+        </div>
+      </section>
+
+      <!-- ===================== Sideline projects ===================== -->
+      <section id="sideline" class="section border-t border-line/5 bg-bg-deep/50" x-show="sideline.length">
+        <div class="container-x">
+          <div class="reveal">
+            <p class="eyebrow">Sideline projects</p>
+            <h2 class="section-title">Independent work outside my main role.</h2>
+            <p class="section-lead">
+              Systems I build on my own time for independent clients.
+            </p>
+          </div>
+
+          <div class="reveal reveal-delay-1 mt-12 grid gap-6">
+            <template x-for="p in sideline" :key="p.id">
+              <article
+                class="project-card is-featured card card-hover flex flex-col overflow-hidden lg:grid lg:grid-cols-[1fr_1.15fr]"
+                :style="`--accent: var(--c-${p.accent || 'violet'})`"
+              >
+                <div class="project-media">
+                  <template x-if="p.image">
+                    <img :src="p.image.src" :alt="p.image.alt" :width="p.image.width" :height="p.image.height" loading="lazy" decoding="async" />
+                  </template>
+                  <template x-if="!p.image">
+                    <div class="project-placeholder" aria-hidden="true">
+                      <div class="window p-4">
+                        <div class="flex gap-1.5">
+                          <span class="h-2 w-2 rounded-full bg-pink/70"></span>
+                          <span class="h-2 w-2 rounded-full bg-violet/60"></span>
+                          <span class="h-2 w-2 rounded-full bg-line/20"></span>
+                        </div>
+                        <div class="mt-4 flex items-center gap-3">
+                          <span class="glyph"><svg class="icon"><use :href="'#i-' + p.icon" /></svg></span>
+                          <span class="flex-1 space-y-2"><span class="device-bar block w-3/4"></span><span class="device-bar block w-1/2 opacity-60"></span></span>
+                        </div>
+                        <div class="mt-4 grid grid-cols-4 gap-2">
+                          <span class="h-7 rounded-md bg-line/5"></span>
+                          <span class="h-7 rounded-md" style="background: rgb(var(--accent) / 0.22)"></span>
+                          <span class="h-7 rounded-md bg-line/5"></span>
+                          <span class="h-7 rounded-md bg-line/5"></span>
+                          <span class="h-7 rounded-md bg-line/5"></span>
+                          <span class="h-7 rounded-md bg-line/5"></span>
+                          <span class="h-7 rounded-md" style="background: rgb(var(--accent) / 0.22)"></span>
+                          <span class="h-7 rounded-md bg-line/5"></span>
+                        </div>
+                      </div>
+                    </div>
+                  </template>
                 </div>
-            </div>
-        </div>
-    </section>
 
-    <!-- Technology Stack -->
-    <section class="mx-auto max-w-7xl px-4 pb-14 sm:px-6 sm:pb-16 lg:px-8 lg:pb-20">
-        <div class="reveal">
-            <h2 class="font-display text-3xl font-bold sm:text-4xl">Technology Stack</h2>
-            <div class="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-                <article class="group rounded-2xl border border-white/10 bg-panel/70 p-5 shadow-card transition duration-300 hover:-translate-y-1 hover:border-cyan/50">
-                    <h3 class="font-semibold text-cyan">Backend</h3>
-                    <p class="mt-2 text-sm leading-relaxed text-textSoft">PHP (Laravel), MySQL, REST APIs</p>
-                </article>
-                <article class="group rounded-2xl border border-white/10 bg-panel/70 p-5 shadow-card transition duration-300 hover:-translate-y-1 hover:border-cyan/50">
-                    <h3 class="font-semibold text-cyan">Frontend</h3>
-                    <p class="mt-2 text-sm leading-relaxed text-textSoft">HTML, TailwindCSS, JavaScript, Bootstrap, Vue, responsive UI.</p>
-                </article>
-                <article class="group rounded-2xl border border-white/10 bg-panel/70 p-5 shadow-card transition duration-300 hover:-translate-y-1 hover:border-cyan/50">
-                    <h3 class="font-semibold text-cyan">Mobile</h3>
-                    <p class="mt-2 text-sm leading-relaxed text-textSoft">Native Android development (Java) </p>
-                </article>
-                <article class="group rounded-2xl border border-white/10 bg-panel/70 p-5 shadow-card transition duration-300 hover:-translate-y-1 hover:border-cyan/50">
-                    <h3 class="font-semibold text-cyan">Tools</h3>
-                    <p class="mt-2 text-sm leading-relaxed text-textSoft">Git/GitHub, Postman, Visual Studio Code.</p>
-                </article>
-            </div>
-        </div>
-    </section>
-
-    <!-- Work Experience -->
-    <section id="experience" class="mx-auto max-w-7xl px-4 pb-14 sm:px-6 sm:pb-16 lg:px-8 lg:pb-20">
-        <div class="reveal">
-            <h2 class="font-display text-3xl font-bold sm:text-4xl">Work Experience</h2>
-            <div class="mt-8 grid gap-5 lg:grid-cols-3">
-                <article class="rounded-2xl border border-white/10 bg-panel/75 p-6 shadow-card transition duration-300 hover:-translate-y-1 hover:border-cyan/55">
-                    <p class="text-xs font-semibold uppercase tracking-[0.16em] text-emerald">2022 - Present</p>
-                    <h3 class="mt-2 text-lg font-bold">Computer Maintenance Technologist II</h3>
-                    <p class="text-sm text-textSoft">Cebu South Medical Center</p>
-                    <ul class="mt-4 space-y-2 text-sm text-textSoft">
-                        <li>- Delivered Human Resource Management Information System (HRIS),Electronic Anti Microbial Stewardship Program (EAMSP) and digital certification workflows.</li>
-                        <li>- Reduced manual processing through automation.</li>
-                        <li>- Supported mission-critical systems across clinical and admin teams.</li>
-                    </ul>
-                </article>
-                <article class="rounded-2xl border border-white/10 bg-panel/75 p-6 shadow-card transition duration-300 hover:-translate-y-1 hover:border-cyan/55">
-                    <p class="text-xs font-semibold uppercase tracking-[0.16em] text-emerald">2019 - 2022</p>
-                    <h3 class="mt-2 text-lg font-bold">Computer Maintenance Technologist II (JO)</h3>
-                    <p class="text-sm text-textSoft">Vicente Sotto Memorial Medical Center</p>
-                    <ul class="mt-4 space-y-2 text-sm text-textSoft">
-                        <li>- Built nurse scheduler, OR planner, COVID information, and queue systems.</li>
-                        <li>- Improved inter-department coordination with tailored workflow apps.</li>
-                        <li>- Maintained and enhanced tools used in high-volume hospital operations.</li>
-                    </ul>
-                </article>
-                <article class="rounded-2xl border border-white/10 bg-panel/75 p-6 shadow-card transition duration-300 hover:-translate-y-1 hover:border-cyan/55">
-                    <p class="text-xs font-semibold uppercase tracking-[0.16em] text-emerald">2017 - 2019</p>
-                    <h3 class="mt-2 text-lg font-bold">Computer Programmer I (JO)</h3>
-                    <p class="text-sm text-textSoft">DOH Regional Office 7</p>
-                    <ul class="mt-4 space-y-2 text-sm text-textSoft">
-                        <li>- Developed mobile DTR solutions for distributed government teams.</li>
-                        <li>- Digitized manual processes into centralized records and dashboards.</li>
-                        <li>- Worked directly with stakeholders to define features and improvements.</li>
-                    </ul>
-                </article>
-            </div>
-        </div>
-    </section>
-
-    <!-- Featured Projects -->
-    <section id="projects" class="mx-auto max-w-7xl px-4 pb-14 sm:px-6 sm:pb-16 lg:px-8 lg:pb-20">
-    <div class="reveal">
-        <h2 class="font-display text-3xl font-bold sm:text-4xl">Featured Projects</h2>
-
-        <div class="mt-8 grid gap-5 md:grid-cols-2 xl:grid-cols-3">
-
-            <!-- HRIS -->
-            <article class="group rounded-2xl border border-white/10 bg-panel/70 p-6 shadow-card transition duration-300 hover:-translate-y-1 hover:border-cyan/60">
-                <h3 class="text-lg font-bold">Human Resource Information System (HRIS)</h3>
-                <p class="mt-3 text-sm leading-relaxed text-textSoft">
-                    Comprehensive HR management system handling employee records, leave management,
-                    attendance monitoring, and reporting tools for hospital administration.
-                </p>
-                <p class="mt-4 text-xs font-semibold uppercase tracking-[0.16em] text-emerald">
-                    Laravel - MySQL - TailwindCSS
-                </p>
-
-            </article>
-
-            <!-- SPMS -->
-            <article class="group rounded-2xl border border-white/10 bg-panel/70 p-6 shadow-card transition duration-300 hover:-translate-y-1 hover:border-cyan/60">
-                <h3 class="text-lg font-bold">Strategic Performance Management System (SPMS)</h3>
-                <p class="mt-3 text-sm leading-relaxed text-textSoft">
-                    Performance evaluation platform used for tracking employee targets,
-                    accomplishments, and ratings aligned with government performance standards.
-                </p>
-
-                <p class="mt-4 text-xs font-semibold uppercase tracking-[0.16em] text-emerald">
-                    Laravel - MySQL - TailwindCSS
-                </p>
-            </article>
-
-            <!-- Queue System -->
-            <article class="group rounded-2xl border border-white/10 bg-panel/70 p-6 shadow-card transition duration-300 hover:-translate-y-1 hover:border-cyan/60">
-                <h3 class="text-lg font-bold">Hospital Queuing System</h3>
-
-                <p class="mt-3 text-sm leading-relaxed text-textSoft">
-                    Ticketing and live display queue platform that improves patient flow and
-                    reduces front-desk bottlenecks.
-                </p>
-
-                <p class="mt-4 text-xs font-semibold uppercase tracking-[0.16em] text-emerald">
-                    ExpressJs - JavaScript - Websocket
-                </p>
-            </article>
-
-        </div>
-    </div>
-</section>
-
-    <!-- Case Study -->
-    <section class="mx-auto max-w-7xl px-4 pb-14 sm:px-6 sm:pb-16 lg:px-8 lg:pb-20">
-        <div class="reveal rounded-3xl border border-white/10 bg-gradient-to-br from-panel to-panelSoft p-7 shadow-card sm:p-10">
-            <h2 class="font-display text-3xl font-bold sm:text-4xl">Case Study: Hospital Queuing System</h2>
-            <div class="mt-8 grid gap-4 md:grid-cols-3">
-                <article class="rounded-2xl border border-white/10 bg-white/5 p-5 transition duration-300 hover:border-cyan/45">
-                    <h3 class="font-semibold text-cyan">Problem</h3>
-                    <p class="mt-2 text-sm leading-relaxed text-textSoft">Manual queue handling led to patient confusion, uneven loads per desk, and frequent line congestion.</p>
-                </article>
-                <article class="rounded-2xl border border-white/10 bg-white/5 p-5 transition duration-300 hover:border-cyan/45">
-                    <h3 class="font-semibold text-cyan">Solution</h3>
-                    <p class="mt-2 text-sm leading-relaxed text-textSoft">Built a digital queue platform with automated ticketing, station controls, and real-time display panels.</p>
-                </article>
-                <article class="rounded-2xl border border-white/10 bg-white/5 p-5 transition duration-300 hover:border-cyan/45">
-                    <h3 class="font-semibold text-cyan">Impact</h3>
-                    <p class="mt-2 text-sm leading-relaxed text-textSoft">Improved service flow visibility, reduced desk crowding, and increased consistency of daily processing.</p>
-                </article>
-            </div>
-        </div>
-    </section>
-
-
-    <!-- Contact -->
-    <section id="contact" class="mx-auto max-w-7xl px-4 pb-20 sm:px-6 sm:pb-24 lg:px-8">
-        <div class="reveal grid gap-5 lg:grid-cols-5">
-            <div class="rounded-3xl border border-white/10 bg-panel/80 p-7 shadow-card lg:col-span-3">
-                <h2 class="font-display text-3xl font-bold">Let’s Build Something High-Impact</h2>
-                <p class="mt-3 text-sm leading-relaxed text-textSoft">
-                    Open to remote opportunities for full stack roles where delivery speed, architecture quality, and real-world outcomes matter.
-                </p>
-                <div class="mt-6 grid gap-4 sm:grid-cols-2">
-                    <article class="rounded-xl border border-white/10 bg-panelSoft/80 p-4 transition hover:border-cyan/40">
-                        <p class="text-xs uppercase tracking-[0.14em] text-textSoft/80">Email</p>
-                        <p class="mt-1 text-sm font-semibold">naui.pangcatan@gmail.com</p>
-                    </article>
-                    <article class="rounded-xl border border-white/10 bg-panelSoft/80 p-4 transition hover:border-cyan/40">
-                        <p class="text-xs uppercase tracking-[0.14em] text-textSoft/80">Phone</p>
-                        <p class="mt-1 text-sm font-semibold">+63 999 524 9718</p>
-                    </article>
-                    <article class="rounded-xl border border-white/10 bg-panelSoft/80 p-4 transition hover:border-cyan/40 sm:col-span-2">
-                        <p class="text-xs uppercase tracking-[0.14em] text-textSoft/80">Location</p>
-                        <p class="mt-1 text-sm font-semibold">Cebu, Philippines</p>
-                    </article>
+                <div class="flex flex-1 flex-col p-6 sm:p-7">
+                  <div class="flex flex-wrap items-center gap-2">
+                    <span class="badge badge-accent" x-text="p.category"></span>
+                    <span class="badge badge-status" :data-status="p.status" x-text="p.status"></span>
+                  </div>
+                  <h3 class="mt-4 text-xl font-black leading-snug sm:text-2xl" x-text="p.title"></h3>
+                  <p class="mt-1 text-sm font-bold text-muted" x-show="p.subtitle" x-text="p.subtitle"></p>
+                  <p class="mt-4 leading-relaxed text-muted" x-text="p.summary"></p>
+                  <ul class="mt-5 space-y-2 text-sm text-ink/85">
+                    <template x-for="f in p.features.slice(0, 3)" :key="f">
+                      <li class="flex gap-2.5">
+                        <svg class="icon mt-0.5 text-violet" style="width:1.05em;height:1.05em" aria-hidden="true"><use href="#i-check" /></svg>
+                        <span x-text="f"></span>
+                      </li>
+                    </template>
+                  </ul>
+                  <ul class="mt-6 flex flex-wrap gap-2" aria-label="Technology stack">
+                    <template x-for="t in p.stack" :key="t">
+                      <li class="chip" x-text="t"></li>
+                    </template>
+                  </ul>
+                  <div class="mt-auto flex flex-wrap items-center gap-3 pt-7">
+                    <button type="button" class="btn btn-ghost btn-sm" @click="openProject(p)">
+                      View details
+                      <svg class="icon" aria-hidden="true"><use href="#i-arrow-right" /></svg>
+                    </button>
+                    <template x-if="p.links && p.links.demo">
+                      <a :href="p.links.demo" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm">Live site <svg class="icon" aria-hidden="true"><use href="#i-external" /></svg></a>
+                    </template>
+                    <template x-if="p.links && p.links.source">
+                      <a :href="p.links.source" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm">Source <svg class="icon" aria-hidden="true"><use href="#i-github" /></svg></a>
+                    </template>
+                  </div>
                 </div>
-            </div>
-            <aside class="rounded-3xl border border-white/10 bg-gradient-to-b from-panelSoft to-panel p-7 shadow-card lg:col-span-2">
-                <h3 class="font-display text-xl font-bold">Quick Actions</h3>
-                <div class="mt-5 space-y-3 text-sm">
-                    <a href="#projects" class="block rounded-xl border border-white/15 bg-white/5 px-4 py-3 font-semibold transition duration-300 hover:border-cyan/50 hover:bg-cyan/10">Review Featured Projects</a>
-                    <a href="assets/Resume.docx" download="Resume.docx" class="block rounded-xl border border-white/15 bg-white/5 px-4 py-3 font-semibold transition duration-300 hover:border-cyan/50 hover:bg-cyan/10">Download Resume (DOCX)</a>
-                </div>
-            </aside>
+              </article>
+            </template>
+          </div>
         </div>
-    </section>
-</main>
+      </section>
 
-<!-- Footer -->
-<footer class="border-t border-white/10 bg-panel/70 py-6">
-    <div class="mx-auto max-w-7xl px-4 text-center text-sm text-textSoft sm:px-6 lg:px-8">
-        &copy; 2026 Asnaui Pangcatan. All rights reserved.
-    </div>
-</footer>
+      <!-- Project detail dialog -->
+      <dialog
+        x-ref="dialog"
+        class="project-dialog"
+        aria-labelledby="project-dialog-title"
+        @close="onDialogClose()"
+        @click="if ($event.target === $refs.dialog) closeProject()"
+      >
+        <template x-if="selected">
+          <div class="max-h-[calc(100dvh-2rem)] overflow-y-auto" :style="`--accent: var(--c-${selected.accent || 'violet'})`">
+            <div class="sticky top-0 z-10 flex items-start justify-between gap-4 border-b border-line/10 bg-surface/95 p-6 backdrop-blur">
+              <div>
+                <div class="flex flex-wrap items-center gap-2">
+                  <span class="badge badge-accent" x-text="selected.category"></span>
+                  <span class="badge badge-status" :data-status="selected.status" x-text="selected.status"></span>
+                </div>
+                <h2 id="project-dialog-title" class="mt-3 text-2xl font-black" x-text="selected.title"></h2>
+                <p class="mt-1 text-sm font-bold text-muted" x-text="[selected.subtitle, selected.org].filter(Boolean).join(' · ')"></p>
+              </div>
+              <button type="button" class="grid h-10 w-10 shrink-0 place-items-center rounded-xl border border-line/10 text-muted transition hover:text-ink" @click="closeProject()" aria-label="Close project details">
+                <svg class="icon" aria-hidden="true"><use href="#i-x" /></svg>
+              </button>
+            </div>
+            <div class="space-y-8 p-6">
+              <p class="leading-relaxed text-muted" x-text="selected.summary"></p>
 
-<script>
-    // Subtle reveal animations for sections as they enter viewport.
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('show');
-            }
-        });
-    }, { threshold: 0.16 });
+              <template x-if="selected.caseStudy">
+                <div class="grid gap-4 sm:grid-cols-3">
+                  <div class="rounded-2xl border border-line/10 bg-bg/60 p-4">
+                    <h3 class="text-xs font-bold uppercase tracking-[0.14em] text-pink">Problem</h3>
+                    <p class="mt-2 text-sm leading-relaxed text-muted" x-text="selected.caseStudy.problem"></p>
+                  </div>
+                  <div class="rounded-2xl border border-line/10 bg-bg/60 p-4">
+                    <h3 class="text-xs font-bold uppercase tracking-[0.14em] text-violet">Solution</h3>
+                    <p class="mt-2 text-sm leading-relaxed text-muted" x-text="selected.caseStudy.solution"></p>
+                  </div>
+                  <div class="rounded-2xl border border-line/10 bg-bg/60 p-4">
+                    <h3 class="text-xs font-bold uppercase tracking-[0.14em] text-success">Impact</h3>
+                    <p class="mt-2 text-sm leading-relaxed text-muted" x-text="selected.caseStudy.impact"></p>
+                  </div>
+                </div>
+              </template>
 
-    document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
-</script>
-</body>
+              <div>
+                <h3 class="text-sm font-bold uppercase tracking-[0.14em] text-ink">Key features</h3>
+                <ul class="mt-4 space-y-3 text-sm text-ink/85">
+                  <template x-for="f in selected.features" :key="f">
+                    <li class="flex gap-2.5">
+                      <svg class="icon mt-0.5 text-violet" style="width:1.05em;height:1.05em" aria-hidden="true"><use href="#i-check" /></svg>
+                      <span x-text="f"></span>
+                    </li>
+                  </template>
+                </ul>
+              </div>
+
+              <div>
+                <h3 class="text-sm font-bold uppercase tracking-[0.14em] text-ink">Technology</h3>
+                <ul class="mt-4 flex flex-wrap gap-2">
+                  <template x-for="t in selected.stack" :key="t">
+                    <li class="chip" x-text="t"></li>
+                  </template>
+                </ul>
+              </div>
+
+              <div class="flex flex-wrap gap-3" x-show="hasLinks(selected)">
+                <template x-if="selected.links?.demo">
+                  <a :href="selected.links.demo" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm">Visit live site <svg class="icon" aria-hidden="true"><use href="#i-external" /></svg></a>
+                </template>
+                <template x-if="selected.links?.source">
+                  <a :href="selected.links.source" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm">Source code <svg class="icon" aria-hidden="true"><use href="#i-github" /></svg></a>
+                </template>
+                <template x-if="selected.links?.caseStudy">
+                  <a :href="selected.links.caseStudy" class="btn btn-outline btn-sm">Case study <svg class="icon" aria-hidden="true"><use href="#i-arrow-right" /></svg></a>
+                </template>
+              </div>
+            </div>
+          </div>
+        </template>
+      </dialog>
+
+      <!-- ===================== Contact ===================== -->
+      <section id="contact" class="section border-t border-line/5 bg-bg-deep/50">
+        <div class="container-x grid gap-10 lg:grid-cols-[1.1fr_1fr] lg:gap-16">
+          <div class="reveal">
+            <p class="eyebrow">Contact</p>
+            <h2 class="section-title">Let’s build something useful.</h2>
+            <p class="section-lead">
+              Open to remote full stack roles where delivery speed, software
+              quality, and real operational outcomes matter. The fastest way to
+              reach me is email.
+            </p>
+            <div class="mt-9 flex flex-wrap gap-4">
+              <a href="mailto:naui.pangcatan@gmail.com" class="btn btn-primary">
+                <svg class="icon" aria-hidden="true"><use href="#i-mail" /></svg>
+                Send an email
+              </a>
+              <a href="assets/Resume.docx" download class="btn btn-outline">
+                <svg class="icon" aria-hidden="true"><use href="#i-download" /></svg>
+                Download Resume
+              </a>
+            </div>
+          </div>
+
+          <ul class="reveal reveal-delay-1 grid gap-4 sm:grid-cols-2">
+            <li class="card p-5 sm:col-span-2">
+              <div class="flex items-center gap-4">
+                <span class="grid h-11 w-11 shrink-0 place-items-center rounded-xl bg-violet/10 text-violet"><svg class="icon" aria-hidden="true"><use href="#i-mail" /></svg></span>
+                <div class="min-w-0 flex-1">
+                  <p class="text-xs font-bold uppercase tracking-[0.14em] text-muted">Email</p>
+                  <a href="mailto:naui.pangcatan@gmail.com" class="mt-0.5 block truncate font-bold text-ink hover:text-violet">naui.pangcatan@gmail.com</a>
+                </div>
+                <button type="button" class="grid h-10 w-10 shrink-0 place-items-center rounded-xl border border-line/10 text-muted transition hover:text-ink" @click="copyEmail('naui.pangcatan@gmail.com')" :aria-label="copied ? 'Email copied' : 'Copy email address'">
+                  <svg class="icon" aria-hidden="true" x-show="!copied"><use href="#i-copy" /></svg>
+                  <svg class="icon text-success" aria-hidden="true" x-show="copied" x-cloak><use href="#i-check" /></svg>
+                </button>
+              </div>
+              <p class="sr-only" role="status" x-text="copied ? 'Email address copied to clipboard' : ''"></p>
+            </li>
+            <li>
+              <a href="tel:+639995249718" class="card card-hover flex items-center gap-4 p-5">
+                <span class="grid h-11 w-11 shrink-0 place-items-center rounded-xl bg-violet/10 text-violet"><svg class="icon" aria-hidden="true"><use href="#i-phone" /></svg></span>
+                <span>
+                  <span class="block text-xs font-bold uppercase tracking-[0.14em] text-muted">Phone</span>
+                  <span class="mt-0.5 block font-bold text-ink">+63 999 524 9718</span>
+                </span>
+              </a>
+            </li>
+            <li>
+              <a href="https://github.com/aspangcatan" target="_blank" rel="noopener noreferrer" class="card card-hover flex items-center gap-4 p-5">
+                <span class="grid h-11 w-11 shrink-0 place-items-center rounded-xl bg-violet/10 text-violet"><svg class="icon" aria-hidden="true"><use href="#i-github" /></svg></span>
+                <span>
+                  <span class="block text-xs font-bold uppercase tracking-[0.14em] text-muted">GitHub</span>
+                  <span class="mt-0.5 block font-bold text-ink">aspangcatan</span>
+                </span>
+              </a>
+            </li>
+            <li class="card flex items-center gap-4 p-5 sm:col-span-2">
+              <span class="grid h-11 w-11 shrink-0 place-items-center rounded-xl bg-violet/10 text-violet"><svg class="icon" aria-hidden="true"><use href="#i-pin" /></svg></span>
+              <span>
+                <span class="block text-xs font-bold uppercase tracking-[0.14em] text-muted">Location</span>
+                <span class="mt-0.5 block font-bold text-ink">Cebu, Philippines · available for remote work</span>
+              </span>
+            </li>
+          </ul>
+        </div>
+      </section>
+    </main>
+
+    <footer class="border-t border-line/5">
+      <div class="container-x flex flex-col items-center justify-between gap-4 py-8 text-sm text-muted sm:flex-row">
+        <p>&copy; 2026 Asnaui Pangcatan. All rights reserved.</p>
+        <a href="#home" class="inline-flex items-center gap-2 font-bold hover:text-violet">
+          Back to top
+          <svg class="icon" aria-hidden="true"><use href="#i-arrow-up" /></svg>
+        </a>
+      </div>
+    </footer>
+  </body>
 </html>
